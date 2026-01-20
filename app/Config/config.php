@@ -1,4 +1,5 @@
 <?php
+// app/Config/config.php
 
 return [
     'PDO_driver' => 'pgsql',

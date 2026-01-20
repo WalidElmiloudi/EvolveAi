@@ -11,7 +11,7 @@
                 style: {
                     background: "linear-gradient(to right, #de740a, #ff0000)",
                 },
-                onClick: function(){}
+                onClick: function(){} 
 }).showToast();
     </script>
     <?php unset($_SESSION['toast']) ?>

@@ -1,4 +1,3 @@
--- Active: 1768299811758@@127.0.0.1@5432@evolve_ai
 DROP DATABASE IF EXISTS evolve_ai;
 
 CREATE DATABASE evolve_ai;

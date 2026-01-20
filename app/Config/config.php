@@ -1,11 +1,10 @@
 <?php
 
 return [
-  'PDO_driver' => 'pgsql',
-  'host'       => 'localhost',
-  'port'       => 5432,
-  'dbname'     => 'evolve_ai',
-  'username'   => 'postgres',
-  'password'   => 'Root1234',
-  'API-KEY'    => 'test1'
+    'PDO_driver' => 'pgsql',
+    'host'       => 'localhost',
+    'port'       => '5432',
+    'dbname'     => 'evolve_ai',
+    'username'   => 'postgres',
+    'password'   => 'imadpostgres',
 ];

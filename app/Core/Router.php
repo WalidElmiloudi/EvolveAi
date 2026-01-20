@@ -12,10 +12,13 @@ class Router
     {
         $url = $this->getUrl();
 
-        // Controller
-        if (isset($url[0]) && file_exists('../app/Controller/' . ucfirst($url[0]) . 'Controller.php')) {
-            $this->currentController = ucfirst($url[0]) . 'Controller';
-            unset($url[0]);
+        if(isset($url[0])) {
+            if(file_exists('../app/Controller/'.ucfirst($url[0]).'Controller.php')) {
+                $this->currentController = ucfirst($url[0]).'Controller';
+                unset($url[0]);
+            } else {
+              $this->currentController = 'HomeController';
+            }
         }
 
         $controllerClass = 'App\\Controller\\' . $this->currentController;

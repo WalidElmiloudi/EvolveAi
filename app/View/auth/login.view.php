@@ -50,7 +50,10 @@
         <!-- Top App Bar (iOS Style) -->
         <div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
             <div class="w-10">
-                <span class="material-symbols-outlined text-[#0d1b10] dark:text-white cursor-pointer">chevron_left</span>
+                <form action="/EvolveAi/home/show">
+                    <button type="submit" class="text-primary font-bold ml-1" ><span class="material-symbols-outlined text-[#0d1b10] dark:text-white cursor-pointer">chevron_left</span></button>
+                </form>
+                
             </div>
             <h2 class="text-[#0d1b10] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Login</h2>
             <div class="w-10"></div>
@@ -117,32 +120,21 @@
         </button>
 
         <!-- Divider -->
-        <div class="flex items-center my-6">
-            <div class="flex-1 border-t border-gray-100 dark:border-gray-800"></div>
-            <span class="px-3 text-gray-400 text-xs uppercase tracking-widest">Or continue with</span>
-            <div class="flex-1 border-t border-gray-100 dark:border-gray-800"></div>
-        </div>
+      
 
         <!-- Social Logins -->
-        <div class="grid grid-cols-2 gap-4 mb-4">
-            <button class="flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 rounded-lg py-2.5 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" type="button">
-                <img alt="" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7vw0s8r_cpk-pU4uVFHqygrz5CQnA7z1jZ1KskcbAVumuV3IgNGktvmg8d5LQTuixjkml0EiXKX6wEFlqDVhEBQNUKHzmIW3yaO0n0TzCYHvxRROXvgrg4ECUT2C1RPz0S3VtaJQ0CihYAMtD_x4RYI5MDG3AEuJGJnve2U6e4XiIcQv8UtBFm_4fBLZDQTCnj8nEHBE-93MIjHLPfGjf8lOmyDvFiawihJ7o2GjOOimgeuRaIJOuKNn6Qt2pvg3lXBU9zIEuWzZ4" />
-                <span class="text-sm font-medium text-[#0d1b10] dark:text-white">Google</span>
-            </button>
-            <button class="flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-700 rounded-lg py-2.5 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" type="button">
-                <span class="material-symbols-outlined text-xl dark:text-white">ios</span>
-                <span class="text-sm font-medium text-[#0d1b10] dark:text-white">Apple</span>
-            </button>
-        </div>
+       
     </form>
 </div>
 
             <!-- Footer Link -->
             <div class="mt-8 text-center">
+               <form action="/EvolveAi/auth/showsignUp">
                 <p class="text-gray-600 dark:text-gray-400 text-sm">
                     Don't have an account?
-                    <a class="text-primary font-bold ml-1" href="/">Create an Account</a>
+                    <button type="submit" class="text-primary font-bold ml-1" href="/">Create an Account</button>
                 </p>
+                </form>
             </div>
         </div>
         <!-- Decorative elements for AI vibe -->

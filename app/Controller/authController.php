@@ -2,7 +2,7 @@
 
 namespace App\controller;
 
-use App\Models\User;
+use App\Model\User;
 
 class AuthController
 {
@@ -54,9 +54,6 @@ class AuthController
             header('Location: /EvolveAi/login');
             exit;
         }
-
-        session_start();
-
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
 
@@ -65,11 +62,11 @@ class AuthController
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header('Location: /EvolveAi/home');
+            header('Location: /EvolveAi/questionnaire/showQuest');
             exit;
         } else {
             $error = "Email ou mot de passe incorrect";
-            require_once '../app/view/auth/login.view.php';
+            header('Location: /EvolveAi/auth/showlogin');
             return;
         }
     }

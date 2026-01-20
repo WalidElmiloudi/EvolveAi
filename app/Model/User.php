@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Model;
 
 use App\Core\Database;
 use PDO;
@@ -23,7 +23,7 @@ class User
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
-        if ($user && password_verify($password, $user['password_hash'])) {
+        if ($user && password_verify($password, $user['password'])) {
             return $user;
         }
         return false;
@@ -31,13 +31,13 @@ class User
     public function create($username, $email, $password)
     {
         $stmt = $this->db->prepare("
-            INSERT INTO \"user\" (username, email, password_hash) 
-            VALUES (:username, :email, :password_hash)
+            INSERT INTO \"user\" (username, email, password) 
+            VALUES (:username, :email, :password)
         ");
 
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password_hash', $password);
+        $stmt->bindParam(':password', $password);
 
         return $stmt->execute();
     }

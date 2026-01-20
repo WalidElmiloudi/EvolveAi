@@ -15,7 +15,7 @@ class Router
         $url = $this->getUrl();
 
         if(isset($url[0])) {
-            if(file_exists('../app/Controller/'.ucfirst($url[0])).'Controller.php') {
+            if(file_exists('../app/Controller/'.ucfirst($url[0]).'Controller.php')) {
                 $this->currentController = ucfirst($url[0]).'Controller';
                 unset($url[0]);
             } else {

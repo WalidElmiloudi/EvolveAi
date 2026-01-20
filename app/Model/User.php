@@ -60,10 +60,20 @@ class User
     public function findValidResetToken($token)
     {
         $stmt = $this->db->prepare("
-            SELECT * FROM password_reset
+            SELECT p.*,u.id FROM password_reset p
+            JOIN \"user\" u ON p.email = u.email
             WHERE token = ? AND expires_at > NOW()
         ");
         $stmt->execute([$token]);
         return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function resetPassword(int $userId,string $passwordHash): bool
+    {
+
+        $stmt = $this->db->prepare("
+            UPDATE \"user\" SET password = ? WHERE id = ?
+        ");
+        return $stmt->execute([$passwordHash,$userId]) ? true : false;
     }
 }

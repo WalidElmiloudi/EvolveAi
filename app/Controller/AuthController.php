@@ -115,7 +115,25 @@ class AuthController
             die('Invalid or expired token');
         }
 
+        $userId = $record['id'];
+
         require_once '../app/view/auth/reset-password.view.php';
+    }
+
+    public function resetPassword(int $userId):void
+    {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $password = $_POST['password'];
+            $passwordHash = password_hash($password,PASSWORD_BCRYPT);
+            $is_reseted = $this->userModel->resetPassword($userId,$passwordHash);
+            
+            if($is_reseted) {
+                $_SESSION['toast'] = ['message' => 'Password Reseted Succefuly !'];
+            } else {
+                $_SESSION['toast'] = ['message' => 'Failed Reset Password !'];
+            }
+            require_once '../app/view/auth/login.view.php';
+        }
     }
 
 }

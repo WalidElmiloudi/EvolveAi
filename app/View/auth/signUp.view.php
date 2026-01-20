@@ -69,82 +69,77 @@
             <p class="text-slate-600 dark:text-slate-400 mt-2">Start generating income with AI-driven insights tailored for you.</p>
         </div>
         <div class="bg-white dark:bg-slate-900/50 backdrop-blur-sm border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm">
-           <form method="POST" action="/EvolveAi/auth/register" class="space-y-4">
-    <div>
-        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="fullname">Full Name</label>
-        <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <span class="material-symbols-outlined text-slate-400 text-xl">person</span>
-            </div>
-            <input 
-                name="username"
-                class="block w-full pl-10 pr-3 py-3 border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" 
-                id="fullname" 
-                placeholder="Enter your full name" 
-                type="text" 
-                required
-            />
-        </div>
-    </div>
+            <form method="POST" action="/EvolveAi/auth/register" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="fullname">Full Name</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="material-symbols-outlined text-slate-400 text-xl">person</span>
+                        </div>
+                        <input
+                            name="username"
+                            class="block w-full pl-10 pr-3 py-3 border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
+                            id="fullname"
+                            placeholder="Enter your full name"
+                            type="text"
+                            required />
+                    </div>
+                </div>
 
-    <div>
-        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="email">Email Address</label>
-        <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <span class="material-symbols-outlined text-slate-400 text-xl">mail</span>
-            </div>
-            <input 
-                name="email"
-                class="block w-full pl-10 pr-3 py-3 border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" 
-                id="email" 
-                placeholder="name@company.com" 
-                type="email" 
-                required
-            />
-        </div>
-    </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="email">Email Address</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="material-symbols-outlined text-slate-400 text-xl">mail</span>
+                        </div>
+                        <input
+                            name="email"
+                            class="block w-full pl-10 pr-3 py-3 border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
+                            id="email"
+                            placeholder="name@company.com"
+                            type="email"
+                            required />
+                    </div>
+                </div>
 
-    <div>
-        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="password">Password</label>
-        <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <span class="material-symbols-outlined text-slate-400 text-xl">lock</span>
-            </div>
-            <input 
-                name="password"
-                class="block w-full pl-10 pr-10 py-3 border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" 
-                id="password" 
-                placeholder="••••••••" 
-                type="password" 
-                required
-            />
-            <div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
-                <span class="material-symbols-outlined text-slate-400 text-xl hover:text-slate-600">visibility</span>
-            </div>
-        </div>
-    </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="password">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <span class="material-symbols-outlined text-slate-400 text-xl">lock</span>
+                        </div>
+                        <input
+                            name="password"
+                            class="block w-full pl-10 pr-10 py-3 border border-slate-200 dark:border-slate-700 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
+                            id="password"
+                            placeholder="••••••••"
+                            type="password"
+                            required />
+                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
+                            <span class="material-symbols-outlined text-slate-400 text-xl hover:text-slate-600">visibility</span>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="flex items-center gap-2 mt-2">
-        <input 
-            name="terms"
-            class="rounded border-slate-300 text-primary focus:ring-primary bg-slate-50" 
-            id="terms" 
-            type="checkbox" 
-            required
-        />
-        <label class="text-xs text-slate-500 dark:text-slate-400" for="terms">
-            I agree to the <a class="text-primary underline" href="#">Terms of Service</a>
-        </label>
-    </div>
+                <div class="flex items-center gap-2 mt-2">
+                    <input
+                        name="terms"
+                        class="rounded border-slate-300 text-primary focus:ring-primary bg-slate-50"
+                        id="terms"
+                        type="checkbox"
+                        required />
+                    <label class="text-xs text-slate-500 dark:text-slate-400" for="terms">
+                        I agree to the <a class="text-primary underline" href="#">Terms of Service</a>
+                    </label>
+                </div>
 
-    <button 
-        type="submit" 
-        class="w-full h-14 bg-primary text-black font-bold text-lg rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-[0.98] transition-transform mt-6"
-    >
-        Create Account
-        <span class="material-symbols-outlined">arrow_forward</span>
-    </button>
-</form>
+                <button
+                    type="submit"
+                    class="w-full h-14 bg-primary text-black font-bold text-lg rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-[0.98] transition-transform mt-6">
+                    Create Account
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </form>
 
         <div class="mt-8 flex items-center justify-center gap-2">
             <span class="material-symbols-outlined text-primary text-sm">auto_graph</span>

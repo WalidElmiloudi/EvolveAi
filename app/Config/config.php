@@ -7,5 +7,5 @@ return [
   'dbname'     => 'evolve_ai',
   'username'   => 'postgres',
   'password'   => 'Root1234',
-  'API-KEY'    => 'test1'
+  'API-KEY'    => 't'
 ];

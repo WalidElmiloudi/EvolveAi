@@ -30,8 +30,14 @@ class User
     }
     public function create($username, $email, $password)
     {
+<<<<<<< HEAD:app/Model/User.php
         $stmt = $this->db->prepare("INSERT INTO \"user\" (username, email, password_hash) 
                                     VALUES (:username, :email, :password_hash)
+=======
+        $stmt = $this->db->prepare("
+            INSERT INTO \"user\" (username, email, password_hash) 
+            VALUES (:username, :email, :password_hash)
+>>>>>>> 8b7db1f361601a8f08e8342d67139a2241315e92:app/Models/User.php
         ");
 
         $stmt->bindParam(':username', $username);

@@ -54,6 +54,8 @@ class AuthController
             header('Location: /EvolveAi/login');
             exit;
         }
+
+
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
 
@@ -66,7 +68,8 @@ class AuthController
             exit;
         } else {
             $error = "Email ou mot de passe incorrect";
-            header('Location: /EvolveAi/auth/showlogin');
+            require_once '../app/view/auth/login.view.php';
+            $_SESSION['toast'] = ['message' => 'incorrect infos!'];
             return;
         }
     }

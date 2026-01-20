@@ -14,7 +14,6 @@ class User
         $this->db = Database::getInstance();
     }
 
-
     public function login($email, $password)
     {
         $stmt = $this->db->prepare(
@@ -28,6 +27,7 @@ class User
         }
         return false;
     }
+
     public function create($username, $email, $password)
     {
         $stmt = $this->db->prepare("
@@ -48,7 +48,6 @@ class User
         $stmt = $this->db->prepare("SELECT * FROM \"user\" WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-
 
         return $stmt->fetch(PDO::FETCH_ASSOC) ? true : false;
     }

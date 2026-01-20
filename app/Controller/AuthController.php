@@ -55,7 +55,6 @@ class AuthController
             exit;
         }
 
-        session_start();
 
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
@@ -70,6 +69,7 @@ class AuthController
         } else {
             $error = "Email ou mot de passe incorrect";
             require_once '../app/view/auth/login.view.php';
+            $_SESSION['toast'] = ['message' => 'incorrect infos!'];
             return;
         }
     }

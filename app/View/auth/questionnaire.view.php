@@ -292,13 +292,25 @@
         }
 
         // Soumission
-        function submitData() {
-            console.log('Données:', data);
-            alert('Questionnaire terminé !\n' + JSON.stringify(data, null, 2));
-            
-            // Ici tu peux envoyer les données au serveur
-            // fetch('/submit', { method: 'POST', body: JSON.stringify(data) })
-        }
+       function submitData() {
+    fetch('/questionnaire/store', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log(result);
+        alert('Questionnaire envoyé avec succès ✅');
+    })
+    .catch(error => {
+        console.error(error);
+        alert('Erreur lors de l’envoi ❌');
+    });
+}
+
 
         // Initialisation
         document.addEventListener('DOMContentLoaded', function() {

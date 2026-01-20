@@ -51,7 +51,10 @@
         <!-- Top App Bar (iOS Style) -->
         <div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
             <div class="w-10">
-                <span class="material-symbols-outlined text-[#0d1b10] dark:text-white cursor-pointer">chevron_left</span>
+                <form action="/EvolveAi/home/show">
+                    <button type="submit" class="text-primary font-bold ml-1" ><span class="material-symbols-outlined text-[#0d1b10] dark:text-white cursor-pointer">chevron_left</span></button>
+                </form>
+                
             </div>
             <h2 class="text-[#0d1b10] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Login</h2>
             <div class="w-10"></div>
@@ -117,12 +120,20 @@
             Login
         </button>
 
+<<<<<<< HEAD
+=======
+        <!-- Divider -->
+      
+
+        <!-- Social Logins -->
+       
+>>>>>>> aef8e19629e304ba0468fe2e6a5317fc09e2668c
     </form>
 </div>
 
             <!-- Footer Link -->
             <div class="mt-8 text-center">
-                <form action="/EvolveAi/auth/showsignUp">
+               <form action="/EvolveAi/auth/showsignUp">
                 <p class="text-gray-600 dark:text-gray-400 text-sm">
                     Don't have an account?
                     <button type="submit" class="text-primary font-bold ml-1" href="/">Create an Account</button>

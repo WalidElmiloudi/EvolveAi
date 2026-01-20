@@ -65,7 +65,7 @@ class AuthController
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header('Location: /EvolveAi/home');
+            header('Location: /EvolveAi/questionnaire/showQuest');
             exit;
         } else {
             $error = "Email ou mot de passe incorrect";

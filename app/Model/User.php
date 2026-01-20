@@ -27,8 +27,11 @@ class User
 
     public function create($username, $email, $password)
     {
-        $stmt = $this->db->prepare("INSERT INTO \"user\" (username, email, password) 
-                                    VALUES (:username, :email, :password)");
+        $stmt = $this->db->prepare("
+            INSERT INTO \"user\" (username, email, password) 
+            VALUES (:username, :email, :password)
+        ");
+
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);

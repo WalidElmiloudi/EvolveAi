@@ -3,6 +3,7 @@
 namespace App\controller;
 
 use App\Model\User;
+use App\Services\SmtpMailer;
 
 class AuthController
 {
@@ -73,4 +74,48 @@ class AuthController
             return;
         }
     }
+
+    public function sendlink(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            return;
+        }
+
+        $email = trim($_POST['email']);
+
+        if (!$this->userModel->exists($email)) {
+            $_SESSION['toast'] = ['message' => 'Invalid Email'];
+            require_once '../app/view/auth/login.view.php';
+            return;
+        }
+
+        $token = bin2hex(random_bytes(32));
+        $expiresAt = date('Y-m-d H:i:s', time() + 300);
+
+        $this->userModel->storeResetToken($email, $token, $expiresAt);
+
+        $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+        $host   = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $base   = $scheme . '://' . $host . '/EvolveAI';
+
+        $link = $base . '/auth/resetPassword/' . $token;
+
+        $mailer = new SmtpMailer();
+        $mailer->sendMail('Reset Password', $link, $email);
+
+        $_SESSION['toast'] = ['message' => 'Password Reset Link Sent'];
+        require_once '../app/view/auth/login.view.php';
+    }
+
+    public function checkOauth(string $token): void
+    {
+        $record = $this->userModel->findValidResetToken($token);
+
+        if (!$record) {
+            die('Invalid or expired token');
+        }
+
+        require_once '../app/view/auth/reset-password.view.php';
+    }
+
 }

@@ -2,7 +2,7 @@
 
 namespace App\controller;
 
-use App\Models\User;
+use App\Model\User;
 
 class AuthController
 {
@@ -55,8 +55,6 @@ class AuthController
             exit;
         }
 
-        session_start();
-
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
 
@@ -72,5 +70,10 @@ class AuthController
             require_once '../app/view/auth/login.view.php';
             return;
         }
+    }
+
+    public function sendlink ()
+    {
+        
     }
 }

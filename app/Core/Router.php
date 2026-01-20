@@ -2,8 +2,6 @@
 
 namespace App\Core;
 
-use App\Core\ControllerFactory;
-
 class Router
 {
     private $currentController = 'HomeController';
@@ -23,34 +21,31 @@ class Router
             }
         }
 
-        require_once '../app/Controller/'.$this->currentController.'.php';
+        $controllerClass = 'App\\Controller\\' . $this->currentController;
 
-        $controllerClass = 'App\\Controller\\'.$this->currentController;
+        if (!class_exists($controllerClass)) {
+            die('Controller not found');
+        }
 
-        $this->currentController = ControllerFactory::make($controllerClass);
+        $controller = new $controllerClass();
 
-        if(isset($url[1])) {
-            if(method_exists($this->currentController,$url[1])) {
-                $this->currentMethod = $url[1];
-                unset($url[1]);
-            } else {
-              $this->currentMethod = 'index';
-            }
+        // Method
+        if (isset($url[1]) && method_exists($controller, $url[1])) {
+            $this->currentMethod = $url[1];
+            unset($url[1]);
         }
 
         $this->params = $url ? array_values($url) : [];
 
-        call_user_func_array([$this->currentController,$this->currentMethod],$this->params);
+        call_user_func_array([$controller, $this->currentMethod], $this->params);
     }
 
     public function getUrl()
     {
-        if(isset($_GET['url'])) {
-            $url = rtrim($_GET['url'],'/');
-            $url =filter_var($url,FILTER_SANITIZE_URL);
-            $url = explode('/',$url);
-
-            return $url;
+        if (isset($_GET['url'])) {
+            $url = rtrim($_GET['url'], '/');
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            return explode('/', $url);
         }
 
         return [];

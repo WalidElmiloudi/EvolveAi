@@ -125,11 +125,7 @@
                 <form action="/EvolveAi/auth/showsignUp">
                 <p class="text-gray-600 dark:text-gray-400 text-sm">
                     Don't have an account?
-<<<<<<< HEAD
-                    <a class="text-primary font-bold ml-1" href="/EvolveAi/auth/showSignUp">Create an Account</a>
-=======
                     <button type="submit" class="text-primary font-bold ml-1" href="/">Create an Account</button>
->>>>>>> f4d1d97351617a4c030b82ca4754b71889dff67e
                 </p>
                 </form>
             </div>

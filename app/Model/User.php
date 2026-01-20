@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Model;
 
 use App\Core\Database;
 use PDO;
@@ -31,8 +31,8 @@ class User
     public function create($username, $email, $password)
     {
         $stmt = $this->db->prepare("
-            INSERT INTO \"user\" (username, email, password_hash) 
-            VALUES (:username, :email, :password_hash)
+            INSERT INTO \"user\" (username, email, password) 
+            VALUES (:username, :email, :password)
         ");
 
         $stmt->bindParam(':username', $username);

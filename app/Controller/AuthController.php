@@ -118,9 +118,4 @@ class AuthController
         require_once '../app/view/auth/reset-password.view.php';
     }
 
-
-    public function showResetPassword(string $email): void
-    {
-        $userEmail = $email;
-    }
 }

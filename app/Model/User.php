@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use App\Core\Database;
+
 class User
 {
     private $db;
@@ -51,7 +53,7 @@ class User
     public function storeResetToken($email, $token, $expiresAt)
     {
         $stmt = $this->db->prepare("
-            INSERT INTO password_reset (email, token, expires_at)
+            INSERT INTO password_reset (email, token, expired_at)
             VALUES (?, ?, ?)
         ");
         $stmt->execute([$email, $token, $expiresAt]);

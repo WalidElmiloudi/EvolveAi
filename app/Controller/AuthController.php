@@ -75,7 +75,7 @@ class AuthController
         }
     }
 
-    public function sendlink(): void
+    public function sendLink(): void
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             return;
@@ -134,6 +134,11 @@ class AuthController
             }
             require_once '../app/view/auth/login.view.php';
         }
+    }
+
+    public function showForgetPassword():void
+    {
+        require_once '../app/view/auth/forgetPassword.view.php';
     }
 
 }

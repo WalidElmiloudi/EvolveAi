@@ -112,7 +112,8 @@ class AuthController
         $record = $this->userModel->findValidResetToken($token);
 
         if (!$record) {
-            die('Invalid or expired token');
+            $_SESSION['toast'] = ['message' => 'Password Reset Link Invalid Or Expired !'];
+            require_once '../app/view/auth/login.view.php';
         }
 
         $userId = $record['id'];

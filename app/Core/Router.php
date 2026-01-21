@@ -21,7 +21,7 @@ class Router
             }
         }
 
-        $controllerClass = 'App\\Controller\\' . "AuthController";
+        $controllerClass = 'App\\Controller\\' . $this->currentController;
 
 
         if (!class_exists($controllerClass)) {
@@ -29,9 +29,6 @@ class Router
         }
 
         $controller = new $controllerClass();
-
-        var_dump($controllerClass);
-        die;
 
         // Method
         if (isset($url[1]) && method_exists($controller, $url[1])) {

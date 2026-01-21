@@ -61,13 +61,9 @@
             </div>
             <span class="text-slate-900 dark:text-white font-bold text-xl tracking-tight">evolveAi</span>
         </div>
-<<<<<<< HEAD
-        <a class="text-primary text-sm font-semibold" href="/EvolveAi/auth/showLogin/">Sign In</a>
-=======
           <form action="/EvolveAi/auth/showlogin">
                     <button type="submit"  class="text-primary text-sm font-semibold">Sign In</button>
                 </form>
->>>>>>> aef8e19629e304ba0468fe2e6a5317fc09e2668c
     </header>
     <main class="flex-1 px-6 flex flex-col justify-center max-w-md mx-auto w-full">
         <div class="mb-8">

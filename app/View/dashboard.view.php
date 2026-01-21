@@ -59,7 +59,8 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display flex">
-    <aside
+    <?php require_once "./partials/sidebar.php"?>
+    <!-- <aside
         class="fixed left-0 top-0 h-screen w-64 bg-white dark:bg-zinc-950 border-r border-black/5 dark:border-white/5 flex flex-col z-50">
         <div class="p-6">
             <div class="flex items-center gap-3 mb-10">
@@ -116,16 +117,8 @@
                 </ul>
             </nav>
         </div>
-        <div class="mt-auto p-6">
-            <div class="p-4 bg-primary/10 rounded-xl">
-                <p class="text-[10px] font-bold uppercase tracking-wider text-primary mb-1">Pro Plan</p>
-                <p class="text-xs opacity-80 mb-3">Unlock advanced AI mentorship</p>
-                <button
-                    class="w-full py-2 bg-primary text-black text-xs font-bold rounded-lg hover:brightness-95 transition-all">Upgrade
-                    Now</button>
-            </div>
-        </div>
-    </aside>
+    
+    </aside> -->
     <div class="flex-1 ml-64 min-h-screen flex flex-col">
         <header
             class="sticky top-0 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5 px-8 h-16 flex items-center justify-between">

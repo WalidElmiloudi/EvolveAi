@@ -29,7 +29,7 @@ class PostController extends Controller
 
         $this->view('community/index', [
             'posts' => $posts
-        ]);
+    ]);
     }
 
     /**

@@ -11,11 +11,11 @@ return [
     'port'       => 5432,
 
     // Database name
-    'dbname'     => 'database_name',
+    'dbname'     => 'evolve_ai',
 
     // Database username
-    'username'   => 'db_user',
+    'username'   => 'postgres',
 
     // Database password
-    'password'   => 'db_password',
+    'password'   => 'abdoabdo',
 ];

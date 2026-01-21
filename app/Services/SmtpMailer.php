@@ -6,7 +6,6 @@ use App\Services\Interfaces\MailerInterface;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-use Dotenv\Dotenv;
 
 
 class SmtpMailer implements MailerInterface
@@ -15,9 +14,6 @@ class SmtpMailer implements MailerInterface
 
     public function __construct()
     {
-        $dotenv = Dotenv::createImmutable(dirname(__DIR__))
-;
-        $dotenv->load();
 
         $this->mail = new PHPMailer(true);
         $this->mail->isSMTP();

@@ -95,7 +95,7 @@
             <label class="flex flex-col w-full">
                 <div class="flex justify-between items-center pb-2">
                     <p class="text-[#0d1b10] dark:text-white text-sm font-medium leading-normal">Password</p>
-                    <a class="text-primary text-xs font-semibold" href="/EvolveAi/auth/resetPassword/">Forgot Password?</a>
+                    <a class="text-primary text-xs font-semibold" href="/EvolveAi/auth/showForgetPassword/">Forgot Password?</a>
                 </div>
                 <div class="flex w-full items-stretch relative">
                     <input 
@@ -120,14 +120,6 @@
             Login
         </button>
 
-<<<<<<< HEAD
-=======
-        <!-- Divider -->
-      
-
-        <!-- Social Logins -->
-       
->>>>>>> aef8e19629e304ba0468fe2e6a5317fc09e2668c
     </form>
 </div>
 

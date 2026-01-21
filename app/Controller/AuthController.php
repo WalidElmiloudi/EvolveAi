@@ -16,6 +16,7 @@ class AuthController
 
     public function showLogin()
     {
+    
         require_once '../app/view/auth/login.view.php';
     }
 

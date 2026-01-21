@@ -64,8 +64,12 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display flex">
-<?php require_once "partials/sidebar.php" ?>
+
+
+    <?php require_once "partials/sidebar.php" ?>
+
     <div class="flex-1 ml-64 min-h-screen flex flex-col">
+
         <header
             class="sticky top-0 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5 px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-4">

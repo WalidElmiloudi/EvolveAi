@@ -64,7 +64,7 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display flex">
-    require_once "";
+    <?php require_once "./partials/sidbar.php"?>
     <!-- <aside
         class="fixed left-0 top-0 h-screen w-64 bg-white dark:bg-zinc-950 border-r border-black/5 dark:border-white/5 flex flex-col z-50">
         <div class="p-6">

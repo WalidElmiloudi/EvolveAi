@@ -10,18 +10,20 @@
             <nav>
                 <ul class="flex flex-col gap-1">
                     <li>
-                        <a class="flex items-center gap-3 rounded-lg px-4 py-3 bg-primary/10 text-primary transition-colors"
-                            href="#">
+                        <form action="../Controller/DashboardController.php" class="flex items-center gap-3 rounded-lg px-4 py-3 bg-primary/10 text-primary transition-colors"
+                            hac>
                             <span class="material-symbols-outlined">dashboard</span>
                             <span class="font-bold">Dashboard</span>
-                        </a>
+                        </form>
                     </li>
                     <li>
-                        <a class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100"
-                            href="#">
+                        <form class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100"
+                            href="plan.view.php">
                             <span class="material-symbols-outlined">assignment</span>
                             <span class="font-medium">Daily Plan</span>
-                        </a>
+                        
+                        </form>
+                        
                     </li>
                     <li>
                         <a class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100"
@@ -32,26 +34,21 @@
                     </li>
                     <li>
                         <a class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100"
-                            href="#">
+                            href="">
                             <span class="material-symbols-outlined">psychology</span>
                             <span class="font-medium">Skills</span>
                         </a>
                     </li>
                     <li>
                         <a class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100"
-                            href="#">
+                            href="./community.view.php ">
                             <span class="material-symbols-outlined">groups</span>
                             <span class="font-medium">Community</span>
                         </a>
                     </li>
                     <div class="my-4 border-t border-black/5 dark:border-white/5"></div>
-                    <li>
-                        <a class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100"
-                            href="#">
-                            <span class="material-symbols-outlined">settings</span>
-                            <span class="font-medium">Settings</span>
+            
                         </a>
-                    </li>
                 </ul>
             </nav>
         </div>

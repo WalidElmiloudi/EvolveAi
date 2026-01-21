@@ -67,16 +67,18 @@
 <!-- TextField Component -->
 <div class="w-full space-y-4">
 <div class="flex flex-col w-full">
+<form action="/EvolveAi/auth/sendLink/" method ="post">
 <label class="flex flex-col w-full">
 <p class="text-[#0d1b10] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Email Address</p>
-<input class="form-input flex w-full rounded-lg text-[#0d1b10] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#243a28] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 px-4 text-base font-normal transition-all" placeholder="e.g., name@email.com" type="email" value=""/>
+<input class="form-input flex w-full rounded-lg text-[#0d1b10] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#243a28] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 px-4 text-base font-normal transition-all" placeholder="e.g., name@email.com" type="email" name = "email" required>
 </label>
 </div>
 <!-- Primary CTA Button -->
-<button class="w-full bg-primary hover:bg-primary/90 text-[#0d1b10] font-semibold py-3.5 rounded-lg transition-colors duration-200 shadow-sm flex items-center justify-center gap-2">
+<button type ="submit" class="w-full bg-primary hover:bg-primary/90 text-[#0d1b10] font-semibold py-3.5 rounded-lg transition-colors duration-200 shadow-sm flex items-center justify-center gap-2">
 <span>Send Reset Link</span>
 <span class="material-symbols-outlined text-[20px]">send</span>
 </button>
+</from>
 </div>
 <!-- Footer / Back to Login -->
 <div class="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800 w-full text-center">

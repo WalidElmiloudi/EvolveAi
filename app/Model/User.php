@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use App\Core\Database;
-use PDO;
 
 class User
 {
@@ -44,11 +43,39 @@ class User
 
     public function exists($email)
     {
-
         $stmt = $this->db->prepare("SELECT * FROM \"user\" WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
-        return $stmt->fetch(PDO::FETCH_ASSOC) ? true : false;
+        return $stmt->fetch(\PDO::FETCH_ASSOC) ? true : false;
+    }
+
+    public function storeResetToken($email, $token, $expiresAt)
+    {
+        $stmt = $this->db->prepare("
+            INSERT INTO password_reset (email, token, expired_at)
+            VALUES (?, ?, ?)
+        ");
+        $stmt->execute([$email, $token, $expiresAt]);
+    }
+
+    public function findValidResetToken($token)
+    {
+        $stmt = $this->db->prepare("
+            SELECT p.*,u.id FROM password_reset p
+            JOIN \"user\" u ON p.email = u.email
+            WHERE token = ? AND expires_at > NOW()
+        ");
+        $stmt->execute([$token]);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function resetPassword(int $userId,string $passwordHash): bool
+    {
+
+        $stmt = $this->db->prepare("
+            UPDATE \"user\" SET password = ? WHERE id = ?
+        ");
+        return $stmt->execute([$passwordHash,$userId]) ? true : false;
     }
 }

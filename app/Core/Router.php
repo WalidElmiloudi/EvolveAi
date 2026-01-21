@@ -5,7 +5,7 @@ namespace App\Core;
 class Router
 {
     private $currentController = 'HomeController';
-    private $currentMethod = 'index';
+    private $currentMethod = 'show';
     private $params = [];
 
     public function __construct()

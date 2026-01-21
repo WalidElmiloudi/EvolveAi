@@ -11,7 +11,7 @@ class QuestionnaireController
         require_once '../app/view/auth/questionnaire.view.php';
     }
 
-   public function store()
+    public function store()
 {
     header('Content-Type: application/json');
 

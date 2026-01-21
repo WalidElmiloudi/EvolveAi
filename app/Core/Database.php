@@ -17,7 +17,7 @@ final class Database
         {
             try
             {
-                $config = require '../app/Config/config.php';
+                $config = require __DIR__ . '/../Config/config.php';
                 self::$instance = new PDO
                                 (
                                     "{$config['PDO_driver']}:host={$config['host']};port={$config['port']};dbname={$config['dbname']}",

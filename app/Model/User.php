@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use App\Core\Database;
+
 class User
 {
     private $db;

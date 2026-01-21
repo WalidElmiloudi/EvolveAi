@@ -1,6 +1,6 @@
 <?php
 
-namespace App\controller;
+namespace App\Controller;
 
 use App\Model\User;
 use App\Services\SmtpMailer;

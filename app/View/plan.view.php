@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="Viewport" />
     <title>evolveAi - Daily Plan</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -64,8 +64,7 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display flex">
-    <?php require_once "./partials/sidbar.php"?>
-    <!-- <aside
+    <aside
         class="fixed left-0 top-0 h-screen w-64 bg-white dark:bg-zinc-950 border-r border-black/5 dark:border-white/5 flex flex-col z-50">
         <div class="p-6">
             <div class="flex items-center gap-3 mb-10">
@@ -131,7 +130,7 @@
                     Now</button>
             </div>
         </div>
-    </aside> -->
+    </aside>
     <div class="flex-1 ml-64 min-h-screen flex flex-col">
         <header
             class="sticky top-0 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5 px-8 h-16 flex items-center justify-between">

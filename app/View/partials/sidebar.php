@@ -10,7 +10,7 @@
             <nav>
                 <ul class="flex flex-col gap-1">
                     <li>
-                        <form action="../Controller/DashboardController.php" class="flex items-center gap-3 rounded-lg px-4 py-3 bg-primary/10 text-primary transition-colors"
+                        <form href="../Controller/Controller.php" class="flex items-center gap-3 rounded-lg px-4 py-3 bg-primary/10 text-primary transition-colors"
                             hac>
                             <span class="material-symbols-outlined">dashboard</span>
                             <span class="font-bold">Dashboard</span>
@@ -18,7 +18,7 @@
                     </li>
                     <li>
                         <form class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100"
-                            href="plan.view.php">
+                            href="../Controller/Plan.php">
                             <span class="material-symbols-outlined">assignment</span>
                             <span class="font-medium">Daily Plan</span>
                         
@@ -27,7 +27,7 @@
                     </li>
                     <li>
                         <a class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100"
-                            href="#">
+                            href="../Controller/">
                             <span class="material-symbols-outlined">auto_awesome</span>
                             <span class="font-medium">Opportunities</span>
                         </a>
@@ -41,7 +41,7 @@
                     </li>
                     <li>
                         <a class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100"
-                            href="./community.view.php ">
+                            href="../Controller/communiteController.php ">
                             <span class="material-symbols-outlined">groups</span>
                             <span class="font-medium">Community</span>
                         </a>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="Viewport" />
     <title>evolveAi Desktop Dashboard View</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -123,7 +123,7 @@
         <header
             class="sticky top-0 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5 px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-4">
-                <span class="text-sm font-medium opacity-60">Dashboard / Overview</span>
+                <span class="text-sm font-medium opacity-60">Dashboard / OverView</span>
             </div>
             <div class="flex items-center gap-4">
                 <button class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 relative">
@@ -176,7 +176,7 @@
                                         class="flex items-start gap-4 p-4 rounded-xl bg-background-light dark:bg-white/5 border border-transparent hover:border-primary/20 transition-all cursor-pointer">
                                         <span class="material-symbols-outlined text-primary">check_circle</span>
                                         <div>
-                                            <p class="text-base font-bold">Review Transformer Mathematics</p>
+                                            <p class="text-base font-bold">ReView Transformer Mathematics</p>
                                             <p class="text-sm opacity-60">Deep dive into multi-head attention scaling
                                                 factors</p>
                                         </div>

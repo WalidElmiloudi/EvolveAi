@@ -4,11 +4,10 @@ namespace App\Controller;
 
 use App\Core\Controller;
 
-class ComuController extends Controller {
+class ComuniteController extends Controller {
 
 public function showCommunity(){
-require_once'../app/view/community.view.php';
-
+  $this->view('community.view');
 }
 
 }

@@ -27,7 +27,7 @@ class PostController extends Controller
 
         $posts = $this->postModel->getAllWithLikes($userId);
 
-        $this->view('community/index', [
+        $this->View('community/index', [
             'posts' => $posts
     ]);
     }

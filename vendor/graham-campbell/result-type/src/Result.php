@@ -7,7 +7,7 @@ declare(strict_types=1);
  *
  * (c) Graham Campbell <hello@gjcampbell.co.uk>
  *
- * For the full copyright and license information, please view the LICENSE
+ * For the full copyright and license information, please View the LICENSE
  * file that was distributed with this source code.
  */
 

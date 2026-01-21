@@ -4,7 +4,7 @@ class planController
 {
 public function showPlan(){
 
-require_once "/pla";
+require_once "/plan.View.php";
 
 }
 

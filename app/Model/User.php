@@ -64,7 +64,7 @@ class User
         $stmt = $this->db->prepare("
             SELECT p.*,u.id FROM password_reset p
             JOIN \"user\" u ON p.email = u.email
-            WHERE token = ? AND expires_at > NOW()
+            WHERE token = ? AND expired_at > NOW()
         ");
         $stmt->execute([$token]);
         return $stmt->fetch(\PDO::FETCH_ASSOC);

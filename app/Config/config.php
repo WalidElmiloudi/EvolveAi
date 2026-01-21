@@ -1,5 +1,4 @@
 <?php
-// app/Config/config.php
 
 return [
     'PDO_driver' => 'pgsql',
@@ -7,5 +6,5 @@ return [
     'port'       => '5432',
     'dbname'     => 'evolve_ai',
     'username'   => 'postgres',
-    'password'   => 'root',
+    'password'   => 'Root1234',
 ];

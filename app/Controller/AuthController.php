@@ -1,6 +1,6 @@
 <?php
 
-namespace App\controller;
+namespace App\Controller;
 
 use App\Model\User;
 use App\Services\SmtpMailer;
@@ -45,7 +45,7 @@ class AuthController
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $this->userModel->create($username, $email, $passwordHash);
 
-        require_once '../app/view/auth/login.view.php';
+        header('Location: /EvolveAi/questionnaire/showQuest');
         exit;
     }
 
@@ -65,7 +65,7 @@ class AuthController
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header('Location: /EvolveAi/questionnaire/showQuest');
+            // header('Location: /EvolveAi/questionnaire/showQuest');
             exit;
         } else {
             $error = "Email ou mot de passe incorrect";
@@ -98,7 +98,7 @@ class AuthController
         $host   = $_SERVER['HTTP_HOST'] ?? 'localhost';
         $base   = $scheme . '://' . $host . '/EvolveAI';
 
-        $link = $base . '/auth/resetPassword/' . $token;
+        $link = $base . '/auth/checkOauth/' . $token;
 
         $mailer = new SmtpMailer();
         $mailer->sendMail('Reset Password', $link, $email);
@@ -117,7 +117,7 @@ class AuthController
 
         $userId = $record['id'];
 
-        require_once '../app/view/auth/reset-password.view.php';
+        require_once '../app/view/auth/updatePassword.php';
     }
 
     public function resetPassword(int $userId):void

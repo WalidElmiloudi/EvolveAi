@@ -8,7 +8,7 @@ class QuestionnaireController
 {
     public function showQuest()
     {
-        require_once '../app/view/auth/questionnaire.view.php';
+        require_once '../app/View/auth/questionnaire.view.php';
     }
 
     public function store()
@@ -21,5 +21,7 @@ class QuestionnaireController
         'success' => true,
         'data' => $data
     ]);
+    echo "45";
+    exit();
 }
     }

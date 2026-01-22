@@ -16,12 +16,13 @@ class AuthController
 
     public function showLogin()
     {
-        require_once '../app/view/auth/login.view.php';
+    
+        require_once '../app/View/auth/login.view.php';
     }
 
     public function showSignUp()
     {
-        require_once '../app/view/auth/signUp.view.php';
+        require_once '../app/View/auth/signUp.view.php';
     }
 
     public function register()
@@ -32,20 +33,24 @@ class AuthController
 
         if (empty($username) || empty($email) || empty($password)) {
             $error = "Tous les champs sont obligatoires";
-            require_once '../app/view/auth/signup.view.php';
+            require_once '../app/View/auth/signup.view.php';
             return;
         }
 
         if ($this->userModel->exists($email)) {
             $error = "Email déjà utilisé";
-            require_once '../app/view/auth/signup.view.php';
+            require_once '../app/View/auth/signup.view.php';
             return;
         }
 
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $this->userModel->create($username, $email, $passwordHash);
 
+<<<<<<< HEAD
+        require_once '../app/View/auth/login.view.php';
+=======
         header('Location: /EvolveAi/questionnaire/showQuest');
+>>>>>>> 5136f27e4baf3038d25eb32abe65485607d1a0c7
         exit;
     }
 
@@ -69,7 +74,7 @@ class AuthController
             exit;
         } else {
             $error = "Email ou mot de passe incorrect";
-            require_once '../app/view/auth/login.view.php';
+            require_once '../app/View/auth/login.view.php';
             $_SESSION['toast'] = ['message' => 'incorrect infos!'];
             return;
         }
@@ -85,7 +90,7 @@ class AuthController
 
         if (!$this->userModel->exists($email)) {
             $_SESSION['toast'] = ['message' => 'Invalid Email'];
-            require_once '../app/view/auth/login.view.php';
+            require_once '../app/View/auth/login.view.php';
             return;
         }
 
@@ -104,7 +109,7 @@ class AuthController
         $mailer->sendMail('Reset Password', $link, $email);
 
         $_SESSION['toast'] = ['message' => 'Password Reset Link Sent'];
-        require_once '../app/view/auth/login.view.php';
+        require_once '../app/View/auth/login.view.php';
     }
 
     public function checkOauth(string $token): void
@@ -117,7 +122,11 @@ class AuthController
 
         $userId = $record['id'];
 
+<<<<<<< HEAD
+        require_once '../app/View/auth/reset-password.view.php';
+=======
         require_once '../app/view/auth/updatePassword.php';
+>>>>>>> 5136f27e4baf3038d25eb32abe65485607d1a0c7
     }
 
     public function resetPassword(int $userId):void
@@ -132,13 +141,13 @@ class AuthController
             } else {
                 $_SESSION['toast'] = ['message' => 'Failed Reset Password !'];
             }
-            require_once '../app/view/auth/login.view.php';
+            require_once '../app/View/auth/login.view.php';
         }
     }
 
     public function showForgetPassword():void
     {
-        require_once '../app/view/auth/forgetPassword.view.php';
+        require_once '../app/View/auth/forgetPassword.view.php';
     }
 
 }

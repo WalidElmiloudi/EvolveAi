@@ -113,44 +113,72 @@
                         </div>
                     </div>
                     <div class="space-y-6">
+                      
                         <div
-                            class="bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm overflow-hidden">
+                            class="bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
                             <div class="p-6">
                                 <div class="flex items-center justify-between mb-4">
                                     <div class="flex items-center gap-3">
                                         <div class="size-10 rounded-full bg-cover bg-center"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoSByF0I3vGXR1hVVeOsFhfFSBFKme9B3dY2iWuzpqvuUOnXtxoGQIcGM74QzJI2qgXCREH2IqmjPmyBxDD707leEAQb5YEYjot40-f1ZUrL5yXqllRjKdd3US9rCEhwvNXDp3UCnmmTboRHgWlki0B0iyFl5nGNocEenU3aFCQxPX7fqGRzZ66q8YwAHYjwGzsNNicb85Hu5JOT7T99r33D9jyPr3HDxPYTfq2dCOMiE5OmFM2cQpAbaGfcs0zjAewfj-Zhgv3Q')">
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXKf2zsz-1oiz7MwTkT0I_GYLCYfZccwCneUDGJCYWnr3AYS454qEuitnXKG9HAj9eQ0AWtfuFobDtFaDvf8NFOK95rIkM_1jH9TX0OjHDtbLuAxlg90NKgXE88n-iZExT6yyzzQW3Eo4CsVXshbneIjcIHgsqnZNIxnBgB540G2pMpe2rFDdjiQ4xdj1lDuNKA4T0szf0Dmwot7fYHFdHoPZNUEJVbeRn2FmSBj50P8d2jtjy9tQsZRfy0nSsESlFkFeznBusDw')">
                                         </div>
                                         <div>
-                                            <p class="font-bold text-sm">Sarah Chen</p>
-                                            <p class="text-[10px] opacity-50 uppercase font-bold tracking-tight">Data
-                                                Scientist • 2h ago</p>
+                                            <p class="font-bold text-sm">Marcus Thorne</p>
+                                            <p class="text-[10px] opacity-50 uppercase font-bold tracking-tight">Full
+                                                Stack Developer • 5h ago</p>
                                         </div>
                                     </div>
                                     <button class="opacity-40 hover:opacity-100"><span
                                             class="material-symbols-outlined">more_horiz</span></button>
                                 </div>
                                 <p class="text-sm leading-relaxed mb-4">
-                                    Just finished the "Advanced Neural Architectures" module. The section on multi-head
-                                    attention mechanisms was a total game-changer for my current project! 🚀 #AI
-                                    #LearningPath
+                                    Does anyone have recommendations for stable diffusion prompts specifically for UI/UX
+                                    wireframing? Trying to speed up my ideation phase.
                                 </p>
-                                <div class="h-64 rounded-xl bg-cover bg-center mb-4"
-                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPgleMs_GJzDtdzYs7XqByx-2AyUYvlEpf1y3pA12BGymzYbHkfqoI1oI5zt4c-VnPEX3v7OVamaVh6n6EMVHqkvL7EObUh9ITiIhiQ3WKLlAWPuNiOB9icoR1ZJy5om_J6eQM1QxQAuAsudqiaSeZpD5MVWiSYmIpS3wt3O8oD2aZGMcTOkDnZLGyHFyQYtMrkUL2Kg0J05kvqRHmpX7i_1wLPHUmV6P-GG8fL6jxeegLpxNSHEIkyqsaxg25HVri-n_jkf0Zjw')">
-                                </div>
                                 <div class="flex items-center gap-6 pt-4 border-t border-black/5 dark:border-white/5">
-                                    <button class="flex items-center gap-2 text-xs font-bold text-primary group">
-                                        <span class="material-symbols-outlined text-lg"
-                                            style="font-variation-settings: 'FILL' 1">thumb_up</span> 24 Likes
+                                    <button
+                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 group">
+                                        <span class="material-symbols-outlined text-lg">thumb_up</span> 12 Likes
                                     </button>
                                     <button
                                         class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100">
-                                        <span class="material-symbols-outlined text-lg">chat_bubble</span> 8 Comments
+                                        <span class="material-symbols-outlined text-lg">chat_bubble</span> 15 Comments
+                                    </button>
+                               
+                                </div>
+                            </div>
+                        </div>
+                           <div
+                            class="bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="size-10 rounded-full bg-cover bg-center"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXKf2zsz-1oiz7MwTkT0I_GYLCYfZccwCneUDGJCYWnr3AYS454qEuitnXKG9HAj9eQ0AWtfuFobDtFaDvf8NFOK95rIkM_1jH9TX0OjHDtbLuAxlg90NKgXE88n-iZExT6yyzzQW3Eo4CsVXshbneIjcIHgsqnZNIxnBgB540G2pMpe2rFDdjiQ4xdj1lDuNKA4T0szf0Dmwot7fYHFdHoPZNUEJVbeRn2FmSBj50P8d2jtjy9tQsZRfy0nSsESlFkFeznBusDw')">
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-sm">Marcus Thorne</p>
+                                            <p class="text-[10px] opacity-50 uppercase font-bold tracking-tight">Full
+                                                Stack Developer • 5h ago</p>
+                                        </div>
+                                    </div>
+                                    <button class="opacity-40 hover:opacity-100"><span
+                                            class="material-symbols-outlined">more_horiz</span></button>
+                                </div>
+                                <p class="text-sm leading-relaxed mb-4">
+                                    Does anyone have recommendations for stable diffusion prompts specifically for UI/UX
+                                    wireframing? Trying to speed up my ideation phase.
+                                </p>
+                                <div class="flex items-center gap-6 pt-4 border-t border-black/5 dark:border-white/5">
+                                    <button
+                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 group">
+                                        <span class="material-symbols-outlined text-lg">thumb_up</span> 12 Likes
                                     </button>
                                     <button
-                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 ml-auto">
-                                        <span class="material-symbols-outlined text-lg">share</span> Share
+                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100">
+                                        <span class="material-symbols-outlined text-lg">chat_bubble</span> 15 Comments
                                     </button>
+                                
                                 </div>
                             </div>
                         </div>
@@ -184,10 +212,7 @@
                                         class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100">
                                         <span class="material-symbols-outlined text-lg">chat_bubble</span> 15 Comments
                                     </button>
-                                    <button
-                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 ml-auto">
-                                        <span class="material-symbols-outlined text-lg">share</span> Share
-                                    </button>
+                                
                                 </div>
                             </div>
                         </div>
@@ -197,10 +222,7 @@
             </div>
         </main>
     </div>
-    <button
-        class="fixed bottom-8 right-8 size-16 bg-primary text-black rounded-full shadow-2xl flex items-center justify-center active:scale-95 hover:scale-110 transition-all z-40">
-        <span class="material-symbols-outlined text-3xl font-bold">auto_awesome</span>
-    </button>
+
 
 </body>
 

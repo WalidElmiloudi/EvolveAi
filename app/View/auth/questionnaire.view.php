@@ -87,17 +87,17 @@
     <div id="step1" class="step active">
         <h2>Quel est ton objectif de revenu ?</h2>
         
-        <div class="option" onclick="selectOption('income', 'side', this)">
+        <div class="option" data-type="income" onclick="selectOption('income', 'side', this)">
             <strong>Side Hustle</strong><br>
             <small>500$ - 1,000$ / mois</small>
         </div>
         
-        <div class="option" onclick="selectOption('income', 'full', this)">
+        <div class="option" data-type="income" onclick="selectOption('income', 'full', this)">
             <strong>Full-time</strong><br>
             <small>3,000$ - 5,000$ / mois</small>
         </div>
         
-        <div class="option" onclick="selectOption('income', 'scale', this)">
+        <div class="option" data-type="income" onclick="selectOption('income', 'scale', this)">
             <strong>Scale</strong><br>
             <small>10,000$+ / mois</small>
         </div>
@@ -137,15 +137,15 @@
         </div>
         
         <h3>Quel appareil utilises-tu ?</h3>
-        <div class="option" data-type="age" onclick="selectOption('device', 'phone', this)">
+        <div class="option" data-type="device" onclick="selectOption('device', 'phone', this)">
             <strong>📱 Smartphone</strong>
         </div>
         
-        <div class="option" data-type="age" onclick="selectOption('device', 'laptop', this)">
+        <div class="option" data-type="device" onclick="selectOption('device', 'laptop', this)">
             <strong>💻 Laptop</strong>
         </div>
         
-        <div class="option" data-type="age" onclick="selectOption('device', 'desktop', this)">
+        <div class="option" data-type="device" onclick="selectOption('device', 'desktop', this)">
             <strong>🖥️ Desktop PC</strong>
         </div>
     </div>
@@ -154,17 +154,17 @@
     <div id="step3" class="step">
         <h2>Comment préfères-tu apprendre ?</h2>
         
-        <div class="option" onclick="selectOption('style', 'visual', this)">
+        <div class="option" data-type="style" onclick="selectOption('style', 'visual', this)">
             <strong>👁️ Visuel</strong><br>
             <small>Vidéos, images</small>
         </div>
         
-        <div class="option" onclick="selectOption('style', 'reading', this)">
+        <div class="option" data-type="style" onclick="selectOption('style', 'reading', this)">
             <strong>📚 Lecture</strong><br>
             <small>Articles, livres</small>
         </div>
         
-        <div class="option" onclick="selectOption('style', 'practice', this)">
+        <div class="option" data-type="style" onclick="selectOption('style', 'practice', this)">
             <strong>✋ Pratique</strong><br>
             <small>Exercices, projets</small>
         </div>
@@ -303,6 +303,7 @@ function submitData() {
         headers: {
             'Content-Type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify(data)
     })
     .then(response => {
@@ -312,13 +313,16 @@ function submitData() {
         return response.json();
     })
     .then(result => {
-        console.log(result);
-        alert('Questionnaire envoyé avec succès');
+    if (result.success) {
+        window.location.href = result.redirect;
+    } else {
+        alert(result.message || 'Error submitting');
+    }
     })
-.catch(error => {
-    console.error('FETCH ERROR:', error);
-    alert(error.message);
-})
+    .catch(error => {
+        console.error('FETCH ERROR:', error);
+        alert(error.message);
+    })
     .finally(() => {
         isSubmitting = false;
     });

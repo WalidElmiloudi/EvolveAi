@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Model\User;
 use PDO;
 
 class Profile
@@ -13,10 +14,14 @@ class Profile
         $this->db = $db;
     }
 
-    public function create(array $data, int $userId): int
+    public function create(array $data, string $email): int
     {
+        $user = new User();
+
+        $userEntity = $user->getIdByEmail($email);
+
         $sql = "
-            INSERT INTO profile 
+            INSERT INTO \"profile\" 
             (user_id, age, income_goal, device, learning_style, current_stat)
             VALUES 
             (:user_id, :age, :income, :device, :style, :stat)
@@ -25,7 +30,7 @@ class Profile
 
         $stmt = $this->db->prepare($sql);
         $stmt->execute([
-            ':user_id' => $userId,
+            ':user_id' => $userEntity,
             ':age'     => (int) $data['age'],
             ':income'  => $data['income'],
             ':device'  => $data['device'],

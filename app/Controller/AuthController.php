@@ -44,7 +44,7 @@ class AuthController
 
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $this->userModel->create($username, $email, $passwordHash);
-
+        $_SESSION['user_email'] = $email;
         header('Location: /EvolveAi/questionnaire/showQuest');
         exit;
     }

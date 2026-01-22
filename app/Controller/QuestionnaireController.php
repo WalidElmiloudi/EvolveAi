@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\Profile;
 use App\Model\Skill;
+use App\Core\Database;
 
 class QuestionnaireController
 {
@@ -30,19 +31,19 @@ class QuestionnaireController
             return;
         }
 
-        $userId = $_SESSION['user_id'] ?? null;
-        if (!$userId) {
+        $userEmail = $_SESSION['user_email'] ?? null;
+        if (!$userEmail) {
             http_response_code(401);
             echo json_encode(['success' => false, 'message' => 'Unauthorized']);
             return;
         }
 
+        $db = Database::getInstance();
         try {
-            $db = Database::connect();
             $db->beginTransaction();
 
             $profileModel = new Profile($db);
-            $profileId = $profileModel->create($data, $userId);
+            $profileId = $profileModel->create($data, $userEmail);
 
             $skillModel = new Skill($db);
 
@@ -54,12 +55,14 @@ class QuestionnaireController
             $level = $levelMap[$data['experience']] ?? 1;
 
             foreach ($data['skills'] as $skill) {
-                $skillModel->add($skill, $level, $userId);
+                $skillModel->add($skill, $level, $userEmail);
             }
-
+            
             $db->commit();
 
-            echo json_encode(['success' => true]);
+            $_SESSION['toast'] = ['message' => 'Questionnaire est termine !'];
+            echo json_encode(['success' => true,
+                              'redirect' => '/EvolveAi/auth/showLogin/']);
 
         } catch (\Throwable $e) {
             $db->rollBack();

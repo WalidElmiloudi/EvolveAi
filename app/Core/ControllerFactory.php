@@ -9,7 +9,10 @@ class ControllerFactory
         $pdo = Database::getInstance();
 
         switch($className) {
-
+            case 'App\Controller\HomeController' : return new $className();
+                                    break;
+            case 'App\Controller\AuthController' : return new $className();
+                                    break;
         }
     }
 }

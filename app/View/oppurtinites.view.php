@@ -90,14 +90,10 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                
                 <div class="group flex flex-col bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 overflow-hidden">
                     <div class="relative aspect-[16/9] overflow-hidden">
                         <img alt="Job visual" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClvdH4eV7UHu1XEiia6cZPyBljVptUquyQwxSB2zBrEyE01cH3ZglZGv9-TPr0dx_BLRoqpc68izpD8iimm-ihAYq8L_12irwPSU1Vi9oL_BnVPtj3DmWAEI7veoIYH9vtezKTB-EYSeEFYBFteE7MhzU4wa1DLmmY8EE5R5UyEhPFgnpsZdKIKIcbTYR1N5WWkmDWfVjj4kmlT3dMFdpOMAg1p5dku5VXEJ91UALFguX1iRBIdhxCOfg4edztSy1Lc_ugwwyN_w" />
-                        <div class="absolute top-4 left-4">
-                            <div class="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm border border-white/20">
-                                <span class="text-primary font-bold text-base">$45/hr</span>
-                            </div>
-                        </div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex gap-2 mb-4">
@@ -106,12 +102,8 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2 leading-tight">Large Language Model RLHF</h3>
                         <p class="text-sm opacity-60 mb-6 flex-1 line-clamp-3">Join our elite training team to rank and refine human feedback data. You will be responsible for evaluating AI responses.</p>
-                        <div class="pt-6 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
-                            <div>
-                                <p class="text-[10px] font-bold opacity-40 uppercase tracking-wider mb-0.5">Commitment</p>
-                                <p class="text-sm font-semibold">30-40 hrs/wk</p>
-                            </div>
-                            <button class="bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">Apply Now</button>
+                        <div class="pt-6 border-t border-black/5 dark:border-white/5">
+                            <button class="w-full bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">got to</button>
                         </div>
                     </div>
                 </div>
@@ -119,11 +111,6 @@
                 <div class="group flex flex-col bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 overflow-hidden">
                     <div class="relative aspect-[16/9] overflow-hidden">
                         <img alt="Job visual" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_cRwaXxYT-Gq8U0Blrz6ozww2YMszPKqDAltudqXebNV-9xWdS3yWx6xDjwUy6oqlmbclkoalMfhBSCUwssBHWsKy9Cubx3WcnG-6sFdDfV0qupzEERGnpB9g4Mbc6rLOVUH30SiZeIUA1a4uRpMWRMj7sQdtuJkm4uH0M-b0JVtXKxbjLh74UqKLhVsBfRK8dzMTAREMibUDEZxopP7yLZnGGFkCI_B3Lqi87fX0NUBy4W0ZHzNjk7QEhzI4ZSWuJIvziDNmHw" />
-                        <div class="absolute top-4 left-4">
-                            <div class="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm border border-white/20">
-                                <span class="text-primary font-bold text-base">$18/hr</span>
-                            </div>
-                        </div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex gap-2 mb-4">
@@ -132,12 +119,8 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2 leading-tight">Visual Object Labeling</h3>
                         <p class="text-sm opacity-60 mb-6 flex-1 line-clamp-3">Annotate urban street images and video footage to help improve autonomous driving safety algorithms.</p>
-                        <div class="pt-6 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
-                            <div>
-                                <p class="text-[10px] font-bold opacity-40 uppercase tracking-wider mb-0.5">Commitment</p>
-                                <p class="text-sm font-semibold">Flexible</p>
-                            </div>
-                            <button class="bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">Apply Now</button>
+                        <div class="pt-6 border-t border-black/5 dark:border-white/5">
+                            <button class="w-full bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">got to</button>
                         </div>
                     </div>
                 </div>
@@ -145,11 +128,6 @@
                 <div class="group flex flex-col bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 overflow-hidden">
                     <div class="relative aspect-[16/9] overflow-hidden">
                         <img alt="Job visual" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBZ9lRkfwjvDeTLPuqf2PMx7-eOgiGNxIpy7pCes6DpJ4NQ-SUYI5_u0HrtJHDH0c14HbKlJjzJO6sSiQRjuWK4pSgOfMjKklpRCVXaJH1VoOcdWddYHNh3X0i-7HuSZaa7R7D_SfC7LTtC8PeYg6dsGTS4R9AeSSWwQgV-ZpWSWfb0oa77WS6ruh6S4kIja_jU1TzTIa31wIaMM8WcoGmAFM57SDPSJZft1EVYbUd2d0lyTmb2z9rNG8EIzO6gWHkzqrJK0zkDA" />
-                        <div class="absolute top-4 left-4">
-                            <div class="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm border border-white/20">
-                                <span class="text-primary font-bold text-base">$60/hr</span>
-                            </div>
-                        </div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex gap-2 mb-4">
@@ -158,12 +136,8 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2 leading-tight">Prompt Engineering Specialist</h3>
                         <p class="text-sm opacity-60 mb-6 flex-1 line-clamp-3">Design complex multi-step prompt chains for enterprise marketing automation. Requires deep understanding of LLM parameters.</p>
-                        <div class="pt-6 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
-                            <div>
-                                <p class="text-[10px] font-bold opacity-40 uppercase tracking-wider mb-0.5">Commitment</p>
-                                <p class="text-sm font-semibold">20 hrs/wk</p>
-                            </div>
-                            <button class="bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">Apply Now</button>
+                        <div class="pt-6 border-t border-black/5 dark:border-white/5">
+                            <button class="w-full bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">got to</button>
                         </div>
                     </div>
                 </div>
@@ -171,11 +145,6 @@
                 <div class="group flex flex-col bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 overflow-hidden">
                     <div class="relative aspect-[16/9] overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
                         <span class="material-symbols-outlined text-4xl opacity-20">mic</span>
-                        <div class="absolute top-4 left-4">
-                            <div class="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm border border-white/20">
-                                <span class="text-primary font-bold text-base">$30/hr</span>
-                            </div>
-                        </div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex gap-2 mb-4">
@@ -184,12 +153,8 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2 leading-tight">AI Voice Synthesis Review</h3>
                         <p class="text-sm opacity-60 mb-6 flex-1 line-clamp-3">Audit synthesized voice outputs for emotional nuance and phonetic accuracy. Native-level English required.</p>
-                        <div class="pt-6 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
-                            <div>
-                                <p class="text-[10px] font-bold opacity-40 uppercase tracking-wider mb-0.5">Commitment</p>
-                                <p class="text-sm font-semibold">10-15 hrs/wk</p>
-                            </div>
-                            <button class="bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">Apply Now</button>
+                        <div class="pt-6 border-t border-black/5 dark:border-white/5">
+                            <button class="w-full bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">got to</button>
                         </div>
                     </div>
                 </div>
@@ -197,11 +162,6 @@
                 <div class="group flex flex-col bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 overflow-hidden">
                     <div class="relative aspect-[16/9] overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
                         <span class="material-symbols-outlined text-4xl opacity-20">translate</span>
-                        <div class="absolute top-4 left-4">
-                            <div class="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm border border-white/20">
-                                <span class="text-primary font-bold text-base">$35/hr</span>
-                            </div>
-                        </div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex gap-2 mb-4">
@@ -210,12 +170,8 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2 leading-tight">Multilingual Dataset Curator</h3>
                         <p class="text-sm opacity-60 mb-6 flex-1 line-clamp-3">Curate and clean high-quality datasets in Spanish, French, or Mandarin to improve translation models.</p>
-                        <div class="pt-6 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
-                            <div>
-                                <p class="text-[10px] font-bold opacity-40 uppercase tracking-wider mb-0.5">Commitment</p>
-                                <p class="text-sm font-semibold">Full-time</p>
-                            </div>
-                            <button class="bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">Apply Now</button>
+                        <div class="pt-6 border-t border-black/5 dark:border-white/5">
+                            <button class="w-full bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">got to</button>
                         </div>
                     </div>
                 </div>
@@ -223,11 +179,6 @@
                 <div class="group flex flex-col bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 overflow-hidden">
                     <div class="relative aspect-[16/9] overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
                         <span class="material-symbols-outlined text-4xl opacity-20">bug_report</span>
-                        <div class="absolute top-4 left-4">
-                            <div class="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm border border-white/20">
-                                <span class="text-primary font-bold text-base">$28/hr</span>
-                            </div>
-                        </div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
                         <div class="flex gap-2 mb-4">
@@ -236,12 +187,8 @@
                         </div>
                         <h3 class="text-xl font-bold mb-2 leading-tight">AI Hallucination Tester</h3>
                         <p class="text-sm opacity-60 mb-6 flex-1 line-clamp-3">Aggressively test AI responses to identify factual errors, logic gaps, and unwanted hallucinations.</p>
-                        <div class="pt-6 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
-                            <div>
-                                <p class="text-[10px] font-bold opacity-40 uppercase tracking-wider mb-0.5">Commitment</p>
-                                <p class="text-sm font-semibold">Flexible</p>
-                            </div>
-                            <button class="bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">Apply Now</button>
+                        <div class="pt-6 border-t border-black/5 dark:border-white/5">
+                            <button class="w-full bg-primary text-black font-bold px-6 py-2.5 rounded-xl text-sm transition-colors shadow-sm hover:brightness-95">got to</button>
                         </div>
                     </div>
                 </div>

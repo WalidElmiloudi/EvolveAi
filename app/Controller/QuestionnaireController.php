@@ -21,5 +21,7 @@ class QuestionnaireController
         'success' => true,
         'data' => $data
     ]);
+    echo "45";
+    exit();
 }
     }

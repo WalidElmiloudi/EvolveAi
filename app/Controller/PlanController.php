@@ -1,11 +1,15 @@
 <?php
 
-class planController
+namespace App\Controller;
+use App\Core\Controller;
+
+class planController extends Controller
 {
+    
 public function showPlan(){
 
-require_once "/plan.View.php";
-
+        $this->View('dailyplan.view');
+        
 }
 
 }

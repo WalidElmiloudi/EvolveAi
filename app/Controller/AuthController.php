@@ -17,12 +17,12 @@ class AuthController
     public function showLogin()
     {
     
-        require_once '../app/View/auth/login.View.php';
+        require_once '../app/View/auth/login.view.php';
     }
 
     public function showSignUp()
     {
-        require_once '../app/View/auth/signUp.View.php';
+        require_once '../app/View/auth/signUp.view.php';
     }
 
     public function register()
@@ -33,20 +33,20 @@ class AuthController
 
         if (empty($username) || empty($email) || empty($password)) {
             $error = "Tous les champs sont obligatoires";
-            require_once '../app/View/auth/signup.View.php';
+            require_once '../app/View/auth/signup.view.php';
             return;
         }
 
         if ($this->userModel->exists($email)) {
             $error = "Email déjà utilisé";
-            require_once '../app/View/auth/signup.View.php';
+            require_once '../app/View/auth/signup.view.php';
             return;
         }
 
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $this->userModel->create($username, $email, $passwordHash);
 
-        require_once '../app/View/auth/login.View.php';
+        require_once '../app/View/auth/login.view.php';
         exit;
     }
 
@@ -70,7 +70,7 @@ class AuthController
             exit;
         } else {
             $error = "Email ou mot de passe incorrect";
-            require_once '../app/View/auth/login.View.php';
+            require_once '../app/View/auth/login.view.php';
             $_SESSION['toast'] = ['message' => 'incorrect infos!'];
             return;
         }
@@ -86,7 +86,7 @@ class AuthController
 
         if (!$this->userModel->exists($email)) {
             $_SESSION['toast'] = ['message' => 'Invalid Email'];
-            require_once '../app/View/auth/login.View.php';
+            require_once '../app/View/auth/login.view.php';
             return;
         }
 
@@ -105,7 +105,7 @@ class AuthController
         $mailer->sendMail('Reset Password', $link, $email);
 
         $_SESSION['toast'] = ['message' => 'Password Reset Link Sent'];
-        require_once '../app/View/auth/login.View.php';
+        require_once '../app/View/auth/login.view.php';
     }
 
     public function checkOauth(string $token): void
@@ -118,7 +118,7 @@ class AuthController
 
         $userId = $record['id'];
 
-        require_once '../app/View/auth/reset-password.View.php';
+        require_once '../app/View/auth/reset-password.view.php';
     }
 
     public function resetPassword(int $userId):void
@@ -133,13 +133,13 @@ class AuthController
             } else {
                 $_SESSION['toast'] = ['message' => 'Failed Reset Password !'];
             }
-            require_once '../app/View/auth/login.View.php';
+            require_once '../app/View/auth/login.view.php';
         }
     }
 
     public function showForgetPassword():void
     {
-        require_once '../app/View/auth/forgetPassword.View.php';
+        require_once '../app/View/auth/forgetPassword.view.php';
     }
 
 }

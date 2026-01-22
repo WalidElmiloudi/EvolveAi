@@ -10,6 +10,6 @@ class HomeController extends Controller
     
     public function show(): void
     {
-        $this->View('home.View');
+        $this->View('home.view');
     }
 }

@@ -15,4 +15,5 @@
 }).showToast();
     </script>
     <?php unset($_SESSION['toast']) ?>
+    
 <?php endif; ?>

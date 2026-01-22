@@ -6,5 +6,5 @@ return [
     'port'       => '5432',
     'dbname'     => 'evolve_ai',
     'username'   => 'postgres',
-    'password'   => 'imadpostgres',
+    'password'   => 'Root1234',
 ];

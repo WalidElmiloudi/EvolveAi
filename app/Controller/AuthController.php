@@ -46,11 +46,8 @@ class AuthController
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $this->userModel->create($username, $email, $passwordHash);
 
-<<<<<<< HEAD
-        require_once '../app/View/auth/login.view.php';
-=======
+        $_SESSION['user_email'] = $email;
         header('Location: /EvolveAi/questionnaire/showQuest');
->>>>>>> 5136f27e4baf3038d25eb32abe65485607d1a0c7
         exit;
     }
 
@@ -70,7 +67,7 @@ class AuthController
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            // header('Location: /EvolveAi/questionnaire/showQuest');
+            header('Location: /EvolveAi/questionnaire/showQuest');
             exit;
         } else {
             $error = "Email ou mot de passe incorrect";
@@ -117,16 +114,13 @@ class AuthController
         $record = $this->userModel->findValidResetToken($token);
 
         if (!$record) {
-            die('Invalid or expired token');
+            $_SESSION['toast'] = ['message' => 'Password Reset Link Invalid Or Expired !'];
+            require_once '../app/view/auth/login.view.php';
         }
 
         $userId = $record['id'];
 
-<<<<<<< HEAD
-        require_once '../app/View/auth/reset-password.view.php';
-=======
         require_once '../app/view/auth/updatePassword.php';
->>>>>>> 5136f27e4baf3038d25eb32abe65485607d1a0c7
     }
 
     public function resetPassword(int $userId):void

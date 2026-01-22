@@ -78,4 +78,12 @@ class User
         ");
         return $stmt->execute([$passwordHash,$userId]) ? true : false;
     }
+    
+    public function getIdByEmail(string $email): int
+    {
+        $stmt = $this->db->prepare("SELECT * FROM \"user\" WHERE email = :email");
+        $stmt->execute([':email' => $email]);
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $result['id'];
+    }
 }

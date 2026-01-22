@@ -5,8 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>evolveAi - Daily Plan</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -49,7 +48,7 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        
+
         body {
             min-height: 100vh;
         }
@@ -58,7 +57,7 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display flex">
-    
+
     <?php require_once "partials/sidebar.php" ?>
 
     <div class="flex-1 ml-64 min-h-screen flex flex-col">
@@ -68,11 +67,11 @@
                 <span class="text-sm font-medium opacity-60">Daily Plan / Today</span>
             </div>
             <div class="flex items-center gap-4">
-                
+
                 <div class="flex items-center gap-3 pl-4 border-l border-black/5 dark:border-white/5">
                     <div class="text-right">
                         <p class="text-sm font-bold">Alex Johnson</p>
-                        
+
                     </div>
                     <div class="size-10 rounded-full bg-cover bg-center ring-2 ring-primary/20"
                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJKYPQgL0KUPVgqtGwcKhHeShFlgo2htXUgbuHzLBU5vKYAHbLhFddIdVR85ez3V9Etm19Lk4TNHcW_mEN1FVA1WYNm6qKIVxDRKYIE7W-fYlyKlWvfaeo4SSFQnpB-Qvdfcn0nLXy_knL0t9xsa9WT_3jX5DWphm3rigth938xC9Kip0CHoWDwTVnrqvO_BE6KNTThfsYCOa-h9eULijhbzW5pRxUFXoGku5vQEf_IN-y4o9XafGvV4WDXSGax9uukRkBNez8yw')">
@@ -80,7 +79,7 @@
                 </div>
             </div>
         </header>
-        
+
         <main class="p-8 max-w-5xl w-full mx-auto space-y-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
@@ -94,24 +93,21 @@
                 </div>
             </div>
 
-           
 
             <div class="space-y-4">
-               
-
                 <div
-                    class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border-l-4 border-l-primary border-y border-r border-black/5 dark:border-white/5 flex items-center justify-between group hover:border-primary/40 transition-all shadow-md">
-                    <div class="flex items-start gap-6">
+                    class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border-l-4 border-l-primary border-y border-r border-black/5 dark:border-white/5 flex items-center justify-between group hover:border-primary/40 transition-all shadow-md cursor-default">
+                    <div class="flex items-start gap-6 w-full">
                         <div class="flex items-center h-6">
                             <input
                                 class="size-6 rounded border-slate-300 text-primary focus:ring-primary cursor-pointer"
                                 type="checkbox" />
                         </div>
-                        <div class="space-y-1">
+                        <div class="space-y-1 w-full">
                             <div class="flex items-center gap-3">
                                 <h4 class="text-lg font-bold">Optimizing Prompt Injection Defense</h4>
-                                
                             </div>
+
                             <div class="flex items-center gap-4 text-sm opacity-60">
                                 <span class="flex items-center gap-1">
                                     <span class="material-symbols-outlined text-sm">schedule</span> 30 mins
@@ -120,54 +116,35 @@
                                     <span class="material-symbols-outlined text-sm">trending_up</span> Medium
                                 </span>
                             </div>
+
+                            <p
+                                class="text-sm text-slate-500 dark:text-slate-400 max-h-0 opacity-0 overflow-hidden group-hover:max-h-24 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                                <br>
+                                Research the latest jailbreak patterns on Reddit and test them against the v2 model
+                                guardrails to ensure robust security.
+                            </p>
                         </div>
                     </div>
-                    <button
-                        class="bg-primary text-black font-bold px-4 py-2 rounded-lg text-sm hover:scale-105 transition-transform">
-                        Start Now
-                    </button>
                 </div>
 
                 <div
-                    class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-black/5 dark:border-white/5 flex items-center justify-between group hover:border-primary/40 transition-all">
-                    <div class="flex items-start gap-6">
+                    class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-black/5 dark:border-white/5 flex items-center justify-between group hover:border-primary/40 transition-all cursor-default">
+                    <div class="flex items-start gap-6 w-full">
                         <div class="flex items-center h-6">
                             <input
                                 class="size-6 rounded border-slate-300 text-primary focus:ring-primary cursor-pointer"
                                 type="checkbox" />
                         </div>
-                        <div class="space-y-1">
+                        <div class="space-y-1 w-full">
                             <div class="flex items-center gap-3">
                                 <h4 class="text-lg font-bold">Market Analysis: AI Voiceover Niche</h4>
-                                
                             </div>
-                            <div class="flex items-center gap-4 text-sm opacity-60">
-                              
-                                <span class="flex items-center gap-1 text-primary">
-                             
-                            </div>
-                        </div>
-                    </div>
-                    <button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span class="material-symbols-outlined opacity-40">more_vert</span>
-                    </button>
-                </div>
-
-                <div
-                    class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border border-black/5 dark:border-white/5 flex items-center justify-between group hover:border-primary/40 transition-all">
-                    <div class="flex items-start gap-6">
-                        <div class="flex items-center h-6">
-                            <input
-                                class="size-6 rounded border-slate-300 text-primary focus:ring-primary cursor-pointer"
-                                type="checkbox" />
-                        </div>
-                        <div class="space-y-1">
-                            <div class="flex items-center gap-3">
-                                <h4 class="text-lg font-bold">Networking: Connect with 3 AI Founders</h4>
-                             
-                            <div class="flex items-center gap-4 text-sm opacity-60">
-                              
-                            </div>
+                            <p
+                                class="text-sm text-slate-500 dark:text-slate-400 max-h-0 opacity-0 overflow-hidden group-hover:max-h-24 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                                <br>
+                                Compare pricing models of ElevenLabs vs. competitors and identify gaps in the local
+                                e-learning market.
+                            </p>
                         </div>
                     </div>
                     <button class="p-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -175,16 +152,17 @@
                     </button>
                 </div>
             </div>
-
             <div class="pt-4">
                 <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-xl font-bold tracking-tight">Project Resources</h2>
-                  
+                    <h2 class="text-xl font-bold tracking-tight">Plan Resources</h2>
+
                 </div>
-            
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-black/5 dark:border-white/5 flex items-center gap-4 group hover:border-primary/40 transition-all cursor-pointer">
-                        <div class="size-12 rounded-lg bg-red-50 dark:bg-red-900/20 flex items-center justify-center shrink-0">
+                    <div
+                        class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-black/5 dark:border-white/5 flex items-center gap-4 group hover:border-primary/40 transition-all cursor-pointer">
+                        <div
+                            class="size-12 rounded-lg bg-red-50 dark:bg-red-900/20 flex items-center justify-center shrink-0">
                             <span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
                         </div>
                         <div class="flex-1 min-w-0">
@@ -195,13 +173,16 @@
                                 <span>Updated 2h ago</span>
                             </p>
                         </div>
-                        <button class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button
+                            class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                             <span class="material-symbols-outlined">download</span>
                         </button>
                     </div>
-            
-                    <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-black/5 dark:border-white/5 flex items-center gap-4 group hover:border-primary/40 transition-all cursor-pointer">
-                        <div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center shrink-0">
+
+                    <div
+                        class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-black/5 dark:border-white/5 flex items-center gap-4 group hover:border-primary/40 transition-all cursor-pointer">
+                        <div
+                            class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center shrink-0">
                             <span class="material-symbols-outlined text-blue-500">link</span>
                         </div>
                         <div class="flex-1 min-w-0">
@@ -210,13 +191,16 @@
                                 <span>External Link</span>
                             </p>
                         </div>
-                        <button class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button
+                            class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                             <span class="material-symbols-outlined">open_in_new</span>
                         </button>
                     </div>
-                    
-                    <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-black/5 dark:border-white/5 flex items-center gap-4 group hover:border-primary/40 transition-all cursor-pointer">
-                        <div class="size-12 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0">
+
+                    <div
+                        class="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-black/5 dark:border-white/5 flex items-center gap-4 group hover:border-primary/40 transition-all cursor-pointer">
+                        <div
+                            class="size-12 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center shrink-0">
                             <span class="material-symbols-outlined text-slate-600 dark:text-slate-400">code</span>
                         </div>
                         <div class="flex-1 min-w-0">
@@ -227,17 +211,19 @@
                                 <span>Private</span>
                             </p>
                         </div>
-                        <button class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button
+                            class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                             <span class="material-symbols-outlined">arrow_forward</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-           
+
         </main>
     </div>
 
 
 </body>
+
 </html>

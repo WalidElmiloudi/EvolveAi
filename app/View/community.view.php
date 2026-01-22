@@ -73,16 +73,17 @@
         <header
             class="sticky top-0 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5 px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-4">
-                <span class="text-sm font-medium opacity-60">Community / Activity Feed</span>
+                <span class="text-sm font-medium opacity-60">Community</span>
             </div>
             <div class="flex items-center gap-4">
-                <div class="relative group">
-            
-                
+
                 <div class="flex items-center gap-3 pl-4 border-l border-black/5 dark:border-white/5">
+                    <div class="text-right">
+                        <p class="text-sm font-bold">Alex Johnson</p>
+
+                    </div>
                     <div class="size-10 rounded-full bg-cover bg-center ring-2 ring-primary/20"
-                        data-alt="User profile avatar circle"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgfevj_Jdf128X156qf2YArdzp28BUmoAhXPRdhb58nd0ycRcK7edmIoK-dqOcrKJXmXxA1r2-nemRWAeLvp-lFaSkqrQNSX8AeMDCWvhL1R6OuZAtXxMRa3fxOn6ppMBYeQlC2oRn_kvCCvZh0wNKZ_jJj_akVcC2bTF3gWqWedTP9Ihb8rThHZ7n0TGRf3qV9k_x7zvvG9HsbVYITSZCsBga9CwXoZhr_PS4JQdMkk3akvOveDMsXQMH_4hHga1aDCYgqShrRg')">
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJKYPQgL0KUPVgqtGwcKhHeShFlgo2htXUgbuHzLBU5vKYAHbLhFddIdVR85ez3V9Etm19Lk4TNHcW_mEN1FVA1WYNm6qKIVxDRKYIE7W-fYlyKlWvfaeo4SSFQnpB-Qvdfcn0nLXy_knL0t9xsa9WT_3jX5DWphm3rigth938xC9Kip0CHoWDwTVnrqvO_BE6KNTThfsYCOa-h9eULijhbzW5pRxUFXoGku5vQEf_IN-y4o9XafGvV4WDXSGax9uukRkBNez8yw')">
                     </div>
                 </div>
             </div>
@@ -102,7 +103,7 @@
                                     placeholder="What's on your mind?"></textarea>
                                 <div class="flex items-center justify-start mt-4">
                                     <div class="flex items-center gap-4">   
-                                       
+
                                     </div>
                                     <button
                                         class="bg-primary text-black font-bold px-6 py-2 rounded-lg hover:brightness-95 transition-all text-sm">
@@ -113,7 +114,7 @@
                         </div>
                     </div>
                     <div class="space-y-6">
-                      
+
                         <div
                             class="bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
                             <div class="p-6">
@@ -124,8 +125,6 @@
                                         </div>
                                         <div>
                                             <p class="font-bold text-sm">Marcus Thorne</p>
-                                            <p class="text-[10px] opacity-50 uppercase font-bold tracking-tight">Full
-                                                Stack Developer • 5h ago</p>
                                         </div>
                                     </div>
                                     <button class="opacity-40 hover:opacity-100"><span
@@ -140,15 +139,12 @@
                                         class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 group">
                                         <span class="material-symbols-outlined text-lg">thumb_up</span> 12 Likes
                                     </button>
-                                    <button
-                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100">
-                                        <span class="material-symbols-outlined text-lg">chat_bubble</span> 15 Comments
-                                    </button>
-                               
+                                
+                            
                                 </div>
                             </div>
                         </div>
-                           <div
+                        <div
                             class="bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
                             <div class="p-6">
                                 <div class="flex items-center justify-between mb-4">
@@ -158,8 +154,7 @@
                                         </div>
                                         <div>
                                             <p class="font-bold text-sm">Marcus Thorne</p>
-                                            <p class="text-[10px] opacity-50 uppercase font-bold tracking-tight">Full
-                                                Stack Developer • 5h ago</p>
+                                
                                         </div>
                                     </div>
                                     <button class="opacity-40 hover:opacity-100"><span
@@ -174,10 +169,7 @@
                                         class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 group">
                                         <span class="material-symbols-outlined text-lg">thumb_up</span> 12 Likes
                                     </button>
-                                    <button
-                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100">
-                                        <span class="material-symbols-outlined text-lg">chat_bubble</span> 15 Comments
-                                    </button>
+                                   
                                 
                                 </div>
                             </div>
@@ -192,8 +184,7 @@
                                         </div>
                                         <div>
                                             <p class="font-bold text-sm">Marcus Thorne</p>
-                                            <p class="text-[10px] opacity-50 uppercase font-bold tracking-tight">Full
-                                                Stack Developer • 5h ago</p>
+                                            
                                         </div>
                                     </div>
                                     <button class="opacity-40 hover:opacity-100"><span
@@ -208,10 +199,7 @@
                                         class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 group">
                                         <span class="material-symbols-outlined text-lg">thumb_up</span> 12 Likes
                                     </button>
-                                    <button
-                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100">
-                                        <span class="material-symbols-outlined text-lg">chat_bubble</span> 15 Comments
-                                    </button>
+                                 
                                 
                                 </div>
                             </div>

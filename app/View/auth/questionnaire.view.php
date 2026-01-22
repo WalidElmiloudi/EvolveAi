@@ -116,36 +116,36 @@
     <div id="step2" class="step">
         <h2>Quel âge as-tu ?</h2>
         
-        <div class="option" onclick="selectOption('age', 'under18', this)">
+        <div class="option" data-type="age" onclick="selectOption('age', 'under18', this)">
             <strong>Moins de 18 ans</strong>
         </div>
         
-        <div class="option" onclick="selectOption('age', '18-25', this)">
+        <div class="option" data-type="age" onclick="selectOption('age', '18-25', this)">
             <strong>18-25 ans</strong>
         </div>
         
-        <div class="option" onclick="selectOption('age', '26-35', this)">
+        <div class="option" data-type="age" onclick="selectOption('age', '26-35', this)">
             <strong>26-35 ans</strong>
         </div>
         
-        <div class="option" onclick="selectOption('age', '36-50', this)">
+        <div class="option" data-type="age" onclick="selectOption('age', '36-50', this)">
             <strong>36-50 ans</strong>
         </div>
         
-        <div class="option" onclick="selectOption('age', '50+', this)">
+        <div class="option" data-type="age" onclick="selectOption('age', '50+', this)">
             <strong>50+ ans</strong>
         </div>
         
         <h3>Quel appareil utilises-tu ?</h3>
-        <div class="option" onclick="selectOption('device', 'phone', this)">
+        <div class="option" data-type="age" onclick="selectOption('device', 'phone', this)">
             <strong>📱 Smartphone</strong>
         </div>
         
-        <div class="option" onclick="selectOption('device', 'laptop', this)">
+        <div class="option" data-type="age" onclick="selectOption('device', 'laptop', this)">
             <strong>💻 Laptop</strong>
         </div>
         
-        <div class="option" onclick="selectOption('device', 'desktop', this)">
+        <div class="option" data-type="age" onclick="selectOption('device', 'desktop', this)">
             <strong>🖥️ Desktop PC</strong>
         </div>
     </div>
@@ -194,23 +194,23 @@
         let currentStep = 1;
 
         // Fonctions de sélection
-        function selectOption(type, value, element) {
-            // Enlever la sélection précédente
-            let parent = element.parentElement;
-            let options = parent.querySelectorAll('.option');
-            options.forEach(opt => opt.classList.remove('selected'));
-            
-            // Sélectionner
-            element.classList.add('selected');
-            data[type] = value;
-            checkStep();
-        }
+function selectOption(type, value, element) {
+    let options = document.querySelectorAll('.option[data-type="' + type + '"]');
+    options.forEach(opt => opt.classList.remove('selected'));
+
+    element.classList.add('selected');
+    data[type] = value;
+    checkStep();
+}
 
         function toggleSkill(skill, element) {
             if (element.classList.contains('selected')) {
                 element.classList.remove('selected');
                 let index = data.skills.indexOf(skill);
-                data.skills.splice(index, 1);
+                 if (index !== -1) {
+                    data.skills.splice(index, 1);
+                 }
+
             } else {
                 element.classList.add('selected');
                 data.skills.push(skill);
@@ -280,7 +280,7 @@
                 btn.style.backgroundColor = '#4CAF50';
                 
                 if (currentStep === 3) {
-                    btn.textContent = 'Terminer ✅';
+                    btn.textContent = 'Termine';
                 } else {
                     btn.textContent = 'Continuer →';
                 }
@@ -292,24 +292,38 @@
         }
 
         // Soumission
-       function submitData() {
-    fetch('/questionnaire/store', {
+let isSubmitting = false;
+
+function submitData() {
+    if (isSubmitting) return;
+    isSubmitting = true;
+
+    fetch('/EvolveAi/questionnaire/store', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('HTTP error ' + response.status);
+        }
+        return response.json();
+    })
     .then(result => {
         console.log(result);
-        alert('Questionnaire envoyé avec succès ✅');
+        alert('Questionnaire envoyé avec succès');
     })
-    .catch(error => {
-        console.error(error);
-        alert('Erreur lors de l’envoi ❌');
+.catch(error => {
+    console.error('FETCH ERROR:', error);
+    alert(error.message);
+})
+    .finally(() => {
+        isSubmitting = false;
     });
 }
+
 
 
         // Initialisation

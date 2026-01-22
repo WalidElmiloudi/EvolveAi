@@ -128,37 +128,37 @@
     <!-- Étape 2 -->
     <div id="step2" class="step">
         <h2>Quel âge as-tu ?</h2>
-
-        <div class="option" onclick="selectOption('age', 'under18', this)">
+        
+        <div class="option" data-type="age" onclick="selectOption('age', 'under18', this)">
             <strong>Moins de 18 ans</strong>
         </div>
-
-        <div class="option" onclick="selectOption('age', '18-25', this)">
+        
+        <div class="option" data-type="age" onclick="selectOption('age', '18-25', this)">
             <strong>18-25 ans</strong>
         </div>
-
-        <div class="option" onclick="selectOption('age', '26-35', this)">
+        
+        <div class="option" data-type="age" onclick="selectOption('age', '26-35', this)">
             <strong>26-35 ans</strong>
         </div>
-
-        <div class="option" onclick="selectOption('age', '36-50', this)">
+        
+        <div class="option" data-type="age" onclick="selectOption('age', '36-50', this)">
             <strong>36-50 ans</strong>
         </div>
-
-        <div class="option" onclick="selectOption('age', '50+', this)">
+        
+        <div class="option" data-type="age" onclick="selectOption('age', '50+', this)">
             <strong>50+ ans</strong>
         </div>
 
         <h3>Quel appareil utilises-tu ?</h3>
-        <div class="option" onclick="selectOption('device', 'phone', this)">
+        <div class="option" data-type="device" onclick="selectOption('device', 'phone', this)">
             <strong>📱 Smartphone</strong>
         </div>
-
-        <div class="option" onclick="selectOption('device', 'laptop', this)">
+        
+        <div class="option" data-type="device" onclick="selectOption('device', 'laptop', this)">
             <strong>💻 Laptop</strong>
         </div>
-
-        <div class="option" onclick="selectOption('device', 'desktop', this)">
+        
+        <div class="option" data-type="device" onclick="selectOption('device', 'desktop', this)">
             <strong>🖥️ Desktop PC</strong>
         </div>
     </div>
@@ -166,18 +166,18 @@
     <!-- Étape 3 -->
     <div id="step3" class="step">
         <h2>Comment préfères-tu apprendre ?</h2>
-
-        <div class="option" onclick="selectOption('style', 'visual', this)">
+        
+        <div class="option" data-type="style" onclick="selectOption('style', 'visual', this)">
             <strong>👁️ Visuel</strong><br>
             <small>Vidéos, images</small>
         </div>
-
-        <div class="option" onclick="selectOption('style', 'reading', this)">
+        
+        <div class="option" data-type="style" onclick="selectOption('style', 'reading', this)">
             <strong>📚 Lecture</strong><br>
             <small>Articles, livres</small>
         </div>
-
-        <div class="option" onclick="selectOption('style', 'practice', this)">
+        
+        <div class="option" data-type="style" onclick="selectOption('style', 'practice', this)">
             <strong>✋ Pratique</strong><br>
             <small>Exercices, projets</small>
         </div>
@@ -207,23 +207,23 @@
         let currentStep = 1;
 
         // Fonctions de sélection
-        function selectOption(type, value, element) {
-            // Enlever la sélection précédente
-            let parent = element.parentElement;
-            let options = parent.querySelectorAll('.option');
-            options.forEach(opt => opt.classList.remove('selected'));
+function selectOption(type, value, element) {
+    let options = document.querySelectorAll('.option[data-type="' + type + '"]');
+    options.forEach(opt => opt.classList.remove('selected'));
 
-            // Sélectionner
-            element.classList.add('selected');
-            data[type] = value;
-            checkStep();
-        }
+    element.classList.add('selected');
+    data[type] = value;
+    checkStep();
+}
 
         function toggleSkill(skill, element) {
             if (element.classList.contains('selected')) {
                 element.classList.remove('selected');
                 let index = data.skills.indexOf(skill);
-                data.skills.splice(index, 1);
+                 if (index !== -1) {
+                    data.skills.splice(index, 1);
+                 }
+
             } else {
                 element.classList.add('selected');
                 data.skills.push(skill);
@@ -293,7 +293,7 @@
                 btn.style.backgroundColor = '#4CAF50';
 
                 if (currentStep === 3) {
-                    btn.textContent = 'Terminer ✅';
+                    btn.textContent = 'Termine';
                 } else {
                     btn.textContent = 'Continuer →';
                 }
@@ -305,24 +305,42 @@
         }
 
         // Soumission
-        function submitData() {
-            fetch('store', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => response.json())
-                .then(result => {
-                    console.log(result);
-                    alert('Questionnaire envoyé avec succès ✅');
-                })
-                .catch(error => {
-                    console.error(error);
-                    alert('Erreur lors de l’envoi ❌');
-                });
+let isSubmitting = false;
+
+function submitData() {
+    if (isSubmitting) return;
+    isSubmitting = true;
+
+    fetch('store', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: 'include',
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('HTTP error ' + response.status);
         }
+        return response.json();
+    })
+    .then(result => {
+    if (result.success) {
+        window.location.href = result.redirect;
+    } else {
+        alert(result.message || 'Error submitting');
+    }
+    })
+    .catch(error => {
+        console.error('FETCH ERROR:', error);
+        alert(error.message);
+    })
+    .finally(() => {
+        isSubmitting = false;
+    });
+}
+
 
 
         // Initialisation

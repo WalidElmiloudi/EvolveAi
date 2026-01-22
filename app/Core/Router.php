@@ -11,7 +11,7 @@ class Router
     public function __construct()
     {
         $url = $this->getUrl();
-
+        
         if(isset($url[0])) {
             if(file_exists('../app/Controller/'.ucfirst($url[0]).'Controller.php')) {
                 $this->currentController = ucfirst($url[0]).'Controller';
@@ -22,6 +22,7 @@ class Router
         }
 
         $controllerClass = 'App\\Controller\\' . $this->currentController;
+
 
         if (!class_exists($controllerClass)) {
             die('Controller not found');

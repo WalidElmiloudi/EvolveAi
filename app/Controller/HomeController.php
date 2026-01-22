@@ -6,8 +6,10 @@ use App\Core\Controller;
 
 class HomeController extends Controller
 {
+
+    
     public function show(): void
     {
-        $this->view('home.view');
+        $this->View('home.view');
     }
 }

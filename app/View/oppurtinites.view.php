@@ -57,82 +57,18 @@
                         <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Explore Opportunities</h1>
                         <p class="text-slate-500 text-sm mt-1">Browse and apply to AI-driven income streams.</p>
                     </div>
-                    <div class="flex items-center gap-4">
-                        <button
-                            class="relative p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
-                            <span class="material-symbols-outlined">notifications</span>
-                            <span
-                                class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-950"></span>
-                        </button>
-                    </div>
+
                 </div>
-                <div class="flex flex-wrap items-center gap-4">
-                    <div class="flex-1 min-w-[300px]">
-                        <div class="relative group">
-                            <span
-                                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
-                            <input
-                                class="w-full pl-12 pr-4 h-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-primary focus:border-primary text-sm transition-all shadow-sm"
-                                placeholder="Search by title, skill, or platform..." type="text" />
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="relative">
-                            <select
-                                class="appearance-none h-12 pl-4 pr-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-medium focus:ring-primary focus:border-primary cursor-pointer shadow-sm">
-                                <option>Category</option>
-                                <option>AI Training</option>
-                                <option>Data Labeling</option>
-                                <option>Content Gen</option>
-                            </select>
-                            <span
-                                class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
-                        </div>
-                        <div class="relative">
-                            <select
-                                class="appearance-none h-12 pl-4 pr-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-medium focus:ring-primary focus:border-primary cursor-pointer shadow-sm">
-                                <option>Commitment</option>
-                                <option>Full-time</option>
-                                <option>Part-time</option>
-                                <option>Flexible</option>
-                            </select>
-                            <span
-                                class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
-                        </div>
-                        <div class="relative">
-                            <select
-                                class="appearance-none h-12 pl-4 pr-10 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-medium focus:ring-primary focus:border-primary cursor-pointer shadow-sm">
-                                <option>Experience</option>
-                                <option>Entry Level</option>
-                                <option>Intermediate</option>
-                                <option>Expert</option>
-                            </select>
-                            <span
-                                class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
-                        </div>
-                        <button
-                            class="h-12 w-12 flex items-center justify-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl hover:opacity-90 transition-opacity shadow-sm">
-                            <span class="material-symbols-outlined">tune</span>
-                        </button>
-                    </div>
-                </div>
+              
             </div>
         </header>
         <div class="max-w-7xl mx-auto p-6 md:p-8">
             <div class="flex items-center justify-between mb-8">
                 <div class="flex items-center gap-2">
                     <span class="text-slate-900 dark:text-white font-bold text-lg">Featured Roles</span>
-                    <span
-                        class="px-2.5 py-0.5 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary/20">12
-                        New</span>
+                    
                 </div>
-                <div class="flex items-center gap-4 text-sm text-slate-500 font-medium">
-                    <span>Sort by:</span>
-                    <button class="flex items-center gap-1 text-slate-900 dark:text-white">
-                        Highest Pay
-                        <span class="material-symbols-outlined text-[18px]">expand_more</span>
-                    </button>
-                </div>
+            
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 <div
@@ -367,13 +303,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-16 pb-16 flex flex-col items-center">
-                <button
-                    class="px-8 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-all shadow-sm">
-                    View More Opportunities
-                </button>
-                <p class="text-slate-400 text-sm mt-4">Showing 6 of 142 opportunities</p>
-            </div>
+        
         </div>
     </main>
 

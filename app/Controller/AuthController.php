@@ -46,7 +46,11 @@ class AuthController
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $this->userModel->create($username, $email, $passwordHash);
 
+<<<<<<< HEAD
         require_once '../app/View/auth/login.view.php';
+=======
+        header('Location: /EvolveAi/questionnaire/showQuest');
+>>>>>>> 5136f27e4baf3038d25eb32abe65485607d1a0c7
         exit;
     }
 
@@ -66,7 +70,7 @@ class AuthController
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header('Location: /EvolveAi/questionnaire/showQuest');
+            // header('Location: /EvolveAi/questionnaire/showQuest');
             exit;
         } else {
             $error = "Email ou mot de passe incorrect";
@@ -99,7 +103,7 @@ class AuthController
         $host   = $_SERVER['HTTP_HOST'] ?? 'localhost';
         $base   = $scheme . '://' . $host . '/EvolveAI';
 
-        $link = $base . '/auth/resetPassword/' . $token;
+        $link = $base . '/auth/checkOauth/' . $token;
 
         $mailer = new SmtpMailer();
         $mailer->sendMail('Reset Password', $link, $email);
@@ -118,7 +122,11 @@ class AuthController
 
         $userId = $record['id'];
 
+<<<<<<< HEAD
         require_once '../app/View/auth/reset-password.view.php';
+=======
+        require_once '../app/view/auth/updatePassword.php';
+>>>>>>> 5136f27e4baf3038d25eb32abe65485607d1a0c7
     }
 
     public function resetPassword(int $userId):void

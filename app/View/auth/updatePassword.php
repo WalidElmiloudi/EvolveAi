@@ -58,31 +58,22 @@
 </div>
 <div class="w-full space-y-4">
 <div class="flex flex-col w-full">
+<form action="/EvolveAi/auth/resetPassword/<?= $userId ?>/" method="post">
 <label class="flex flex-col w-full relative">
 <p class="text-[#0d1b10] dark:text-gray-200 text-sm font-medium leading-normal pb-2">New Password</p>
 <div class="relative">
-<input class="form-input flex w-full rounded-lg text-[#0d1b10] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#243a28] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 px-4 pr-12 text-base font-normal transition-all" placeholder="Enter new password" type="password"/>
+<input class="form-input flex w-full rounded-lg text-[#0d1b10] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#243a28] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 px-4 pr-12 text-base font-normal transition-all" placeholder="Enter new password" type="password" name ="password" required>
 <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200" type="button">
 <span class="material-symbols-outlined text-[22px]">visibility</span>
 </button>
 </div>
 </label>
-</div>
-<div class="flex flex-col w-full">
-<label class="flex flex-col w-full relative">
-<p class="text-[#0d1b10] dark:text-gray-200 text-sm font-medium leading-normal pb-2">Confirm New Password</p>
-<div class="relative">
-<input class="form-input flex w-full rounded-lg text-[#0d1b10] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#243a28] h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 px-4 pr-12 text-base font-normal transition-all" placeholder="Confirm your password" type="password"/>
-<button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200" type="button">
-<span class="material-symbols-outlined text-[22px]">visibility</span>
-</button>
-</div>
-</label>
-</div>
-<button class="w-full bg-primary hover:bg-primary/90 text-[#0d1b10] font-bold py-3.5 rounded-lg transition-colors duration-200 shadow-sm flex items-center justify-center gap-2 mt-2">
+<button type ="submit" class="w-full bg-primary hover:bg-primary/90 text-[#0d1b10] font-bold py-3.5 rounded-lg transition-colors duration-200 shadow-sm flex items-center justify-center gap-2 mt-2">
 <span>Update Password</span>
 <span class="material-symbols-outlined text-[20px]">lock_reset</span>
 </button>
+</form>
+</div>
 </div>
 <div class="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800 w-full text-center">
 <a class="inline-flex items-center gap-1 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary transition-colors" href="#">

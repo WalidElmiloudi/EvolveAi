@@ -60,7 +60,10 @@ class QuestionnaireController
             
             $db->commit();
 
-            $_SESSION['toast'] = ['message' => 'Questionnaire est termine !'];
+            $_SESSION['toast'] = [
+                'message' => 'Questionnaire est termine !',
+                'type' => 'success'
+                ];
             echo json_encode(['success' => true,
                               'redirect' => '/EvolveAi/auth/showLogin/']);
 
@@ -69,7 +72,7 @@ class QuestionnaireController
             http_response_code(500);
             echo json_encode([
                 'success' => false,
-                'message' => $e->getMessage() // dev only
+                'message' => $e->getMessage()
             ]);
         }
     }

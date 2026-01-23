@@ -72,7 +72,10 @@ class AuthController
         } else {
             $error = "Email ou mot de passe incorrect";
             require_once '../app/View/auth/login.view.php';
-            $_SESSION['toast'] = ['message' => 'incorrect infos!'];
+            $_SESSION['toast'] = [
+                'message' => 'incorrect infos!',
+                'type' => 'failed'
+                ];
             return;
         }
     }
@@ -86,7 +89,10 @@ class AuthController
         $email = trim($_POST['email']);
 
         if (!$this->userModel->exists($email)) {
-            $_SESSION['toast'] = ['message' => 'Invalid Email'];
+            $_SESSION['toast'] = [
+                'message' => 'Invalid Email',
+                'type' => 'failed'
+            ];
             require_once '../app/View/auth/login.view.php';
             return;
         }
@@ -105,7 +111,10 @@ class AuthController
         $mailer = new SmtpMailer();
         $mailer->sendMail('Reset Password', $link, $email);
 
-        $_SESSION['toast'] = ['message' => 'Password Reset Link Sent'];
+        $_SESSION['toast'] = [
+            'message' => 'Password Reset Link Sent',
+            'type' => 'success'
+        ];
         require_once '../app/View/auth/login.view.php';
     }
 
@@ -114,8 +123,16 @@ class AuthController
         $record = $this->userModel->findValidResetToken($token);
 
         if (!$record) {
+<<<<<<< HEAD
             $_SESSION['toast'] = ['message' => 'Password Reset Link Invalid Or Expired !'];
             require_once '../app/View/auth/login.view.php';
+=======
+            $_SESSION['toast'] = [
+                'message' => 'Password Reset Link Invalid Or Expired !',
+                'type' => 'failed'
+                ];
+            require_once '../app/view/auth/login.view.php';
+>>>>>>> 8298292781722fd0f3bdfd920effd1a7fcd3a3bf
         }
 
         $userId = $record['id'];
@@ -131,9 +148,15 @@ class AuthController
             $is_reseted = $this->userModel->resetPassword($userId,$passwordHash);
             
             if($is_reseted) {
-                $_SESSION['toast'] = ['message' => 'Password Reseted Succefuly !'];
+                $_SESSION['toast'] = [
+                    'message' => 'Password Reseted Succefuly !',
+                    'type' => 'success'
+                    ];
             } else {
-                $_SESSION['toast'] = ['message' => 'Failed Reset Password !'];
+                $_SESSION['toast'] = [
+                    'message' => 'Failed Reset Password !',
+                    'type' => 'failed'
+                ];
             }
             require_once '../app/View/auth/login.view.php';
         }

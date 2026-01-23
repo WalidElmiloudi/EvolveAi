@@ -9,7 +9,7 @@ class Controller
         if(file_exists('../app/View/'.$view.'.php')) {
             require_once '../app/View/'.$view.'.php';
         } else {
-            die("View : ".$view."doesn't exists !");
+            die("View : ".$view." doesn't exists !");
         }
     }
 }

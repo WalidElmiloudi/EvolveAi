@@ -33,13 +33,13 @@ class AuthController
 
         if (empty($username) || empty($email) || empty($password)) {
             $error = "Tous les champs sont obligatoires";
-            require_once '../app/View/auth/signup.view.php';
+            require_once '../app/View/auth/signUUp.view.php';
             return;
         }
 
         if ($this->userModel->exists($email)) {
             $error = "Email déjà utilisé";
-            require_once '../app/View/auth/signup.view.php';
+            require_once '../app/View/auth/signUp.view.php';
             return;
         }
 
@@ -98,7 +98,7 @@ class AuthController
 
         $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
         $host   = $_SERVER['HTTP_HOST'] ?? 'localhost';
-        $base   = $scheme . '://' . $host . '/EvolveAI';
+        $base   = $scheme . '://' . $host . '/EvolveAi';
 
         $link = $base . '/auth/checkOauth/' . $token;
 
@@ -115,12 +115,12 @@ class AuthController
 
         if (!$record) {
             $_SESSION['toast'] = ['message' => 'Password Reset Link Invalid Or Expired !'];
-            require_once '../app/view/auth/login.view.php';
+            require_once '../app/View/auth/login.view.php';
         }
 
         $userId = $record['id'];
 
-        require_once '../app/view/auth/updatePassword.php';
+        require_once '../app/View/auth/updatePassword.php';
     }
 
     public function resetPassword(int $userId):void
@@ -142,6 +142,11 @@ class AuthController
     public function showForgetPassword():void
     {
         require_once '../app/View/auth/forgetPassword.view.php';
+    }
+
+    public function logout(){
+
+
     }
 
 }

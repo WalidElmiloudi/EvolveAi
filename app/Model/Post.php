@@ -29,11 +29,11 @@ class Post
     {
          $stmt = $this->db->prepare(
              "DELETE FROM post WHERE id = :post_id"
-         );
+        );
 
-         return $stmt->execute([
-             'post_id' => $postId
-         ]);
+        return $stmt->execute([
+            'post_id' => $postId
+        ]);
     }
 //Le rôle de EXISTS ici est de retourner un booléen pour chaque post, indiquant si l’utilisateur a liké ce post ou pas.
 

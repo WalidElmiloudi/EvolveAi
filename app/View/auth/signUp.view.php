@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0" name="Viewport" />
     <title>Register Account</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
@@ -61,7 +61,9 @@
             </div>
             <span class="text-slate-900 dark:text-white font-bold text-xl tracking-tight">evolveAi</span>
         </div>
-        <a class="text-primary text-sm font-semibold" href="/EvolveAi/auth/showLogin/">Sign In</a>
+          <form action="/EvolveAi/auth/showlogin">
+                    <button type="submit"  class="text-primary text-sm font-semibold">Sign In</button>
+                </form>
     </header>
     <main class="flex-1 px-6 flex flex-col justify-center max-w-md mx-auto w-full">
         <div class="mb-8">

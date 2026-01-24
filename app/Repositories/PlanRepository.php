@@ -48,4 +48,17 @@ class PlanRepository {
         }
     }
 
+    public function findPlanByDate($userId, $date) {
+        $sql = "SELECT * FROM daily_plan WHERE user_id = :uid AND DATE(created_at) = :date";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['uid' => $userId, 'date' => $date]);
+        return $stmt->fetch();
+    }
+
+    public function getTasksByPlanId($planId) {
+        $sql = "SELECT * FROM task WHERE plan_id = :pid";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['pid' => $planId]);
+        return $stmt->fetchAll();
+    }
 }

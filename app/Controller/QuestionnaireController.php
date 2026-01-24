@@ -65,7 +65,7 @@ class QuestionnaireController
                 'type' => 'success'
                 ];
             echo json_encode(['success' => true,
-                              'redirect' => '/EvolveAi/auth/showLogin/']);
+                              'redirect' => '/EvolveAi/plan/showplan/']);
 
         } catch (\Throwable $e) {
             $db->rollBack();

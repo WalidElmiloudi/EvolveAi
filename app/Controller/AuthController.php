@@ -33,13 +33,13 @@ class AuthController
 
         if (empty($username) || empty($email) || empty($password)) {
             $error = "Tous les champs sont obligatoires";
-            require_once '../app/View/auth/signUUp.view.php';
+            require_once '../app/View/auth/signup.view.php';
             return;
         }
 
         if ($this->userModel->exists($email)) {
             $error = "Email déjà utilisé";
-            require_once '../app/View/auth/signUp.view.php';
+            require_once '../app/View/auth/signup.view.php';
             return;
         }
 
@@ -67,7 +67,7 @@ class AuthController
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header('Location: /EvolveAi/questionnaire/showQuest');
+            header('Location: /EvolveAi/plan/showplan');
             exit;
         } else {
             $error = "Email ou mot de passe incorrect";
@@ -123,16 +123,16 @@ class AuthController
         $record = $this->userModel->findValidResetToken($token);
 
         if (!$record) {
-<<<<<<< HEAD
+
             $_SESSION['toast'] = ['message' => 'Password Reset Link Invalid Or Expired !'];
             require_once '../app/View/auth/login.view.php';
-=======
+
             $_SESSION['toast'] = [
                 'message' => 'Password Reset Link Invalid Or Expired !',
                 'type' => 'failed'
                 ];
             require_once '../app/view/auth/login.view.php';
->>>>>>> 8298292781722fd0f3bdfd920effd1a7fcd3a3bf
+
         }
 
         $userId = $record['id'];
@@ -165,11 +165,12 @@ class AuthController
     public function showForgetPassword():void
     {
         require_once '../app/View/auth/forgetPassword.view.php';
+
     }
 
     public function logout(){
 
-
-    }
+ require_once '../app/View/auth/login.view.php';
+}
 
 }

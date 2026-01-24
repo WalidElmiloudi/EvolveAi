@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Core\Database;
+use App\Model\User;
 use PDO;
 
 class PromptService {
@@ -12,7 +13,9 @@ class PromptService {
         $this->db = Database::getInstance();
     }
 
-    public function buildJsonPrompt($user_id) {
+    public function buildJsonPrompt($user_email) {
+        $userModel = new User();
+        $user_id = $userModel->getIdByEmail($user_email);
         $sql = 'SELECT  u.username , 
                         p.age , 
                         p.income_goal , 
@@ -29,12 +32,24 @@ class PromptService {
         $stmt->execute(['user_id' => $user_id]);
 
         $data = $stmt->fetch(PDO::FETCH_OBJ);
-        if(!$data){
-            return null;
+        if(!$data){return null;}
+        
+        $skillsql = "SELECT name , level FROM skill WHERE user_id = :user_id";
+        $skillstmt = $this->db->prepare($skillsql);
+        $skillstmt->execute(['user_id' => $user_id]);
+        $skills = $skillstmt->fetchAll(PDO::FETCH_OBJ);
+
+        $skillstext = "";
+        foreach($skills as $skill){
+            $skillstext .= $skill->name . "(Level " . $skill->level . "), ";
         }
 
         $prompt = "Act as a strict Career Coach for " . $data->username . ". ";
         $prompt .= "User Context: They are a " . $data->current_stat . " (Age: " . $data->age . ") ";
+
+        if(!empty($skillstext)){
+            $prompt .= "Current Skills: " . rtrim($skillstext, ', ') . ". ";
+        }
         $prompt .= "looking to earn " . $data->income_goal . ". ";
         $prompt .= "They have " . $data->time_available . " available today. ";
         $prompt .= "Learning Style: " . $data->learning_style . ". ";

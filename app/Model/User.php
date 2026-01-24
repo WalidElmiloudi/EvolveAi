@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Core\Database;
+use PDO;
 
 class User
 {
@@ -32,13 +33,15 @@ class User
         $stmt = $this->db->prepare("
             INSERT INTO \"user\" (username, email, password) 
             VALUES (:username, :email, :password)
-        ");
+            RETURNING id");
 
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
 
-        return $stmt->execute();
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
     }
 
     public function exists($email)
@@ -64,7 +67,7 @@ class User
         $stmt = $this->db->prepare("
             SELECT p.*,u.id FROM password_reset p
             JOIN \"user\" u ON p.email = u.email
-            WHERE token = ? AND expires_at > NOW()
+            WHERE token = ? AND expired_at > NOW()
         ");
         $stmt->execute([$token]);
         return $stmt->fetch(\PDO::FETCH_ASSOC);
@@ -77,5 +80,19 @@ class User
             UPDATE \"user\" SET password = ? WHERE id = ?
         ");
         return $stmt->execute([$passwordHash,$userId]) ? true : false;
+    }
+    
+    public function getIdByEmail(string $email): int
+    {
+        $stmt = $this->db->prepare("SELECT * FROM \"user\" WHERE email = :email");
+        $stmt->execute([':email' => $email]);
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $result['id'];
+    }
+
+    public function logout(): void
+    {
+        session_destroy();
+        session_unset();
     }
 }

@@ -67,6 +67,7 @@ class AuthController
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['user_email'] = $email;
             header('Location: /EvolveAi/plan/showplan');
             exit;
         } else {
@@ -160,6 +161,12 @@ class AuthController
     public function showForgetPassword():void
     {
         require_once '../app/View/auth/forgetPassword.view.php';
+    }
+
+    public function logout(): void
+    {
+        $this->userModel->logout();
+        require_once '../app/View/home.view.php';
     }
 
 }

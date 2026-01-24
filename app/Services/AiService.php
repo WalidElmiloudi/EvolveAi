@@ -23,7 +23,7 @@ class AiService {
             'model' => 'meta-llama/Llama-3.1-8B-Instruct',
             'messages' => [
                 ['role' => 'system', 'content' => 'You are a helpful AI Career Coach. You must output ONLY valid JSON. Do not add markdown or explanations.'],
-                ['role' => 'user', 'content' => $this->prompt->buildJsonPrompt($_SESSION['user_id'])]
+                ['role' => 'user', 'content' => $this->prompt->buildJsonPrompt($_SESSION['user_email'])]
             ],
             'temperature' => 0.7,
             'max_tokens' => 1000

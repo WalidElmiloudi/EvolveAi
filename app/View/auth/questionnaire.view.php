@@ -99,18 +99,18 @@
     <!-- Étape 1 -->
     <div id="step1" class="step active">
         <h2>Quel est ton objectif de revenu ?</h2>
-
-        <div class="option" onclick="selectOption('income', 'side', this)">
+        
+        <div class="option" data-type="income" onclick="selectOption('income', 'side', this)">
             <strong>Side Hustle</strong><br>
             <small>500$ - 1,000$ / mois</small>
         </div>
-
-        <div class="option" onclick="selectOption('income', 'full', this)">
+        
+        <div class="option" data-type="income" onclick="selectOption('income', 'full', this)">
             <strong>Full-time</strong><br>
             <small>3,000$ - 5,000$ / mois</small>
         </div>
-
-        <div class="option" onclick="selectOption('income', 'scale', this)">
+        
+        <div class="option" data-type="income" onclick="selectOption('income', 'scale', this)">
             <strong>Scale</strong><br>
             <small>10,000$+ / mois</small>
         </div>
@@ -311,7 +311,7 @@ function submitData() {
     if (isSubmitting) return;
     isSubmitting = true;
 
-    fetch('store', {
+    fetch('/EvolveAi/questionnaire/store', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

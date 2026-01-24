@@ -110,7 +110,3 @@ CREATE TABLE password_reset (
     token VARCHAR(255) NOT NULL,
     expired_at TIMESTAMP
 );
-
-SELECT * FROM "user";
-SELECT * FROM daily_plan;
-SELECT * FROM task;

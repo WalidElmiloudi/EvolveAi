@@ -79,7 +79,7 @@
 
                 <div class="flex items-center gap-3 pl-4 border-l border-black/5 dark:border-white/5">
                     <div class="text-right">
-                        <p class="text-sm font-bold"><?= $_SESSION['username'] ?></p>
+                        <p class="text-sm font-bold"><?= htmlspecialchars($_SESSION['username']) ?></p>
                     </div>
                 </div>
             </div>
@@ -113,8 +113,9 @@
                     </div>
                     <div class="space-y-6">
                         <?php
-                        foreach($posts as $post):
-                           $isLiked = $this->postModel->isLikedByUser($userId,$post['id']);
+                        if(!empty($posts)):
+                           foreach($posts as $post):
+                              $isLiked = $this->postModel->isLikedByUser($userId,$post['id']);
                         ?>
                         <div
                             class="bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
@@ -145,7 +146,8 @@
                             </div>
                         </div>
                         <?php
-                        endforeach;
+                           endforeach;
+                        endif;
                         ?>
                     </div>
                 </div>

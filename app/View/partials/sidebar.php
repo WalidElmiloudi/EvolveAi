@@ -29,7 +29,7 @@
 
 
                 <li>
-                    <a href="/EvolveAi/Comunite/showCommunity"
+                    <a href="/EvolveAi/post/index/"
                         class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100">
                         <span class="material-symbols-outlined">groups</span>
                         <span class="font-medium">Community</span>

@@ -71,7 +71,7 @@
             <div class="flex items-center gap-4">
                 <div class="flex items-center gap-3 pl-4 border-l border-black/5 dark:border-white/5">
                     <div class="text-right">
-                        <p class="text-sm font-bold"><?= $_SESSION['username'] ?></p>
+                        <p class="text-sm font-bold"><?= htmlspecialchars($_SESSION['username']) ?></p>
                     </div>
                 </div>
             </div>

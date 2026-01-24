@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Core\Database;
+use App\Model\User;
 use PDO;
 
 class PromptService {
@@ -12,7 +13,9 @@ class PromptService {
         $this->db = Database::getInstance();
     }
 
-    public function buildJsonPrompt($user_id) {
+    public function buildJsonPrompt($user_email) {
+        $userModel = new User();
+        $user_id = $userModel->getIdByEmail($user_email);
         $sql = 'SELECT  u.username , 
                         p.age , 
                         p.income_goal , 

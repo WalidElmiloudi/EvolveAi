@@ -67,6 +67,7 @@ class AuthController
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['user_email'] = $email;
             header('Location: /EvolveAi/plan/showplan');
             exit;
         } else {

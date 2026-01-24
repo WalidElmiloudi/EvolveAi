@@ -60,9 +60,12 @@ class QuestionnaireController
             
             $db->commit();
 
-            $_SESSION['toast'] = ['message' => 'Questionnaire est termine !'];
+            $_SESSION['toast'] = [
+                'message' => 'Questionnaire est termine !',
+                'type' => 'success'
+                ];
             echo json_encode(['success' => true,
-                              'redirect' => '/EvolveAi/auth/showLogin/']);
+                              'redirect' => '/EvolveAi/plan/showplan/']);
 
         } catch (\Throwable $e) {
             $db->rollBack();

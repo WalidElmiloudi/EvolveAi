@@ -9,11 +9,11 @@
                 position: "left", 
                 stopOnFocus: false,
                 style: {
-                    background: "linear-gradient(to right, #de740a, #ff0000)",
-                },
-                onClick: function(){} 
-}).showToast();
-    </script>
+                background: "<?= $_SESSION['toast']['type'] == 'success' ? 'linear-gradient(to right, #059669, #34d399)' : 'linear-gradient(to right, #dc2626, #f87171)' ?>",
+                    },
+                    onClick: function(){} 
+                }).showToast();
+                </script>
     <?php unset($_SESSION['toast']) ?>
     
 <?php endif; ?>

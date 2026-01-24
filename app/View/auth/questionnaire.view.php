@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Questionnaire Simple - EvolveAI</title>
@@ -10,12 +11,15 @@
             margin: 0 auto;
             padding: 20px;
         }
+
         .step {
             display: none;
         }
+
         .active {
             display: block;
         }
+
         .option {
             border: 2px solid #ccc;
             padding: 15px;
@@ -23,10 +27,12 @@
             border-radius: 10px;
             cursor: pointer;
         }
+
         .selected {
             border-color: #4CAF50;
             background-color: #e8f5e9;
         }
+
         .skill {
             display: inline-block;
             padding: 8px 16px;
@@ -35,10 +41,12 @@
             border-radius: 20px;
             cursor: pointer;
         }
+
         .skill.selected {
             background-color: #4CAF50;
             color: white;
         }
+
         button {
             width: 100%;
             padding: 15px;
@@ -50,15 +58,18 @@
             cursor: pointer;
             margin-top: 20px;
         }
+
         button:disabled {
             background-color: #ccc;
             cursor: not-allowed;
         }
+
         .progress {
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
         }
+
         .progress-step {
             width: 30px;
             height: 30px;
@@ -69,13 +80,15 @@
             justify-content: center;
             color: white;
         }
+
         .progress-step.active {
             background-color: #4CAF50;
         }
     </style>
 </head>
+
 <body>
-    
+
     <!-- Barre de progression -->
     <div class="progress">
         <div class="progress-step active">1</div>
@@ -101,7 +114,7 @@
             <strong>Scale</strong><br>
             <small>10,000$+ / mois</small>
         </div>
-        
+
         <h3>Compétences qui t'intéressent :</h3>
         <div>
             <span class="skill" onclick="toggleSkill('ai', this)">🤖 AI</span>
@@ -135,7 +148,7 @@
         <div class="option" data-type="age" onclick="selectOption('age', '50+', this)">
             <strong>50+ ans</strong>
         </div>
-        
+
         <h3>Quel appareil utilises-tu ?</h3>
         <div class="option" data-type="device" onclick="selectOption('device', 'phone', this)">
             <strong>📱 Smartphone</strong>
@@ -168,7 +181,7 @@
             <strong>✋ Pratique</strong><br>
             <small>Exercices, projets</small>
         </div>
-        
+
         <h3>Ton niveau actuel :</h3>
         <div>
             <span class="skill" onclick="selectExp('beginner', this)">🆕 Débutant</span>
@@ -190,7 +203,7 @@
             style: null,
             experience: null
         };
-        
+
         let currentStep = 1;
 
         // Fonctions de sélection
@@ -223,7 +236,7 @@ function selectOption(type, value, element) {
             let parent = element.parentElement;
             let skills = parent.querySelectorAll('.skill');
             skills.forEach(s => s.classList.remove('selected'));
-            
+
             // Sélectionner
             element.classList.add('selected');
             data.experience = exp;
@@ -234,15 +247,15 @@ function selectOption(type, value, element) {
         function nextStep() {
             // Cacher étape actuelle
             document.getElementById('step' + currentStep).classList.remove('active');
-            
+
             if (currentStep < 3) {
                 currentStep++;
                 // Montrer prochaine étape
                 document.getElementById('step' + currentStep).classList.add('active');
-                
+
                 // Mettre à jour la barre de progression
                 updateProgress();
-                
+
                 // Vérifier si on peut continuer
                 checkStep();
             } else {
@@ -265,7 +278,7 @@ function selectOption(type, value, element) {
         // Validation
         function checkStep() {
             let valid = false;
-            
+
             if (currentStep === 1) {
                 valid = data.income !== null && data.skills.length > 0;
             } else if (currentStep === 2) {
@@ -273,12 +286,12 @@ function selectOption(type, value, element) {
             } else if (currentStep === 3) {
                 valid = data.style !== null && data.experience !== null;
             }
-            
+
             let btn = document.getElementById('continueBtn');
             if (valid) {
                 btn.disabled = false;
                 btn.style.backgroundColor = '#4CAF50';
-                
+
                 if (currentStep === 3) {
                     btn.textContent = 'Termine';
                 } else {
@@ -336,4 +349,5 @@ function submitData() {
         });
     </script>
 </body>
+
 </html>

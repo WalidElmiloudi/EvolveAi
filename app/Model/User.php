@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Core\Database;
+use PDO;
 
 class User
 {
@@ -32,13 +33,15 @@ class User
         $stmt = $this->db->prepare("
             INSERT INTO \"user\" (username, email, password) 
             VALUES (:username, :email, :password)
-        ");
+            RETURNING id");
 
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
 
-        return $stmt->execute();
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
     }
 
     public function exists($email)

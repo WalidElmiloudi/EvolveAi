@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Model\Profile;
 use App\Model\Skill;
 use App\Core\Database;
+use App\Controller\planController;
 
 class QuestionnaireController
 {
@@ -75,5 +76,11 @@ class QuestionnaireController
                 'message' => $e->getMessage()
             ]);
         }
+
+
+
+        $planController = new planController;
+
+        $planController->store();
     }
 }

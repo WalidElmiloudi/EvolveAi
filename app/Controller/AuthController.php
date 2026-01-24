@@ -162,4 +162,10 @@ class AuthController
         require_once '../app/View/auth/forgetPassword.view.php';
     }
 
+    public function logout(): void
+    {
+        $this->userModel->logout();
+        require_once '../app/View/home.view.php';
+    }
+
 }

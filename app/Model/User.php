@@ -86,4 +86,10 @@ class User
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
         return $result['id'];
     }
+
+    public function logout(): void
+    {
+        session_destroy();
+        session_unset();
+    }
 }

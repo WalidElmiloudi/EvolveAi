@@ -39,7 +39,7 @@
                 <div class="my-4 border-t border-black/5 dark:border-white/5"></div>
 
                 <li>
-                    <a href="../Controller/LogoutController.php"
+                    <a href="/EvolveAi/auth/logout/"
                         class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100">
                         <span class="material-symbols-outlined">logout</span>
                         <span class="font-medium">Log out</span>

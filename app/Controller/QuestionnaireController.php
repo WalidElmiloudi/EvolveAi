@@ -52,7 +52,7 @@ class QuestionnaireController
                 'beginner' => 1,
                 'intermediate' => 2,
                 'advanced' => 3
-             ];
+            ];
             $level = $levelMap[$data['experience']] ?? 1;
 
             foreach ($data['skills'] as $skill) {
@@ -63,10 +63,10 @@ class QuestionnaireController
 
             $_SESSION['toast'] = [
                 'message' => 'Questionnaire est termine !',
-                'type' => 'success'
+                'type' =>'success'
                 ];
             echo json_encode(['success' => true,
-                              'redirect' => '/EvolveAi/plan/showplan/']);
+                            'redirect' =>'/EvolveAi/plan/showPlan/']);
 
         } catch (\Throwable $e) {
             $db->rollBack();

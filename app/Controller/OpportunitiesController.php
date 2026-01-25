@@ -8,8 +8,14 @@ class OpportunitiesController extends Controller
 {
     public function showOpportunities()
     {
-        $this->view('opportunities.view');
 
-    }   
+        if (!isset($_SESSION['user_id'])) {
 
+
+            $this->view('auth/login.view');
+
+        } else {
+            $this->view('opportunities.view');
+        }
+    }
 }

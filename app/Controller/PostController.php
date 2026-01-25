@@ -26,6 +26,7 @@ class PostController extends Controller
         $userId = $_SESSION['user_id'] ?? null;
 
         $posts = $this->postModel->getAllWithLikes($userId);
+        $userPosts = $this->postModel->postsByUser($userId);
 
         require_once '../app/View/community.view.php';
     }

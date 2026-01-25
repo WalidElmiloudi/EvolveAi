@@ -12,7 +12,7 @@ class AiService {
 
     public function __construct()
     {
-        $this->apiKey = 'API_KEY';
+        $this->apiKey = $_ENV['API_KEY'];
         $this->endpoint = "https://router.huggingface.co/v1/chat/completions";
         $this->prompt = new PromptService;
     }

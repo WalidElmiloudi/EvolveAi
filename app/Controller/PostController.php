@@ -97,7 +97,7 @@ class PostController extends Controller
             $postId = $_POST['post_id'];
             $this->postModel->delete($postId);
             header("Location: /EvolveAi/post/index/");
-            exit;
+            
         }
     }
 }

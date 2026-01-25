@@ -151,7 +151,36 @@
                         ?>
                     </div>
                 </div>
-            
+            <!-- RIGHT SIDEBAR -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+    <div class="bg-white dark:bg-zinc-900 rounded-2xl p-6 border border-black/5 dark:border-white/5 shadow-sm">
+        <h3 class="font-bold text-sm mb-4">My Posts</h3>
+
+        <?php if (!empty($userPosts)): ?>
+            <?php foreach ($userPosts as $post): ?>
+                <div class="border-b border-black/5 dark:border-white/5 pb-4 mb-4 last:border-none">
+                    <p class="text-sm mb-3"><?= htmlspecialchars($post['content']) ?></p>
+
+                    <div class="flex gap-3">
+
+                        <!-- DELETE -->
+                        <form action="/EvolveAi/post/delete/" method="POST"
+                              onsubmit="return confirm('Are you sure you want to delete this post?');">
+                              <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
+                            <button type="submit"
+                                    class="text-xs font-bold text-red-500 hover:underline">
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p class="text-sm opacity-60">You haven’t posted anything yet.</p>
+        <?php endif; ?>
+    </div>
+</div>
+
             </div>
         </main>
     </div>

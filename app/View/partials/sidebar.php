@@ -20,7 +20,7 @@
                 </li>
 
                 <li>
-                    <a href="/EvolveAi/Oppurtinites/showOpportunities"
+                    <a href="/EvolveAi/opportunities/showOpportunities"
                         class="flex items-center gap-3 rounded-lg px-4 py-3 hover:bg-black/5 dark:hover:bg-white/5 transition-colors opacity-70 hover:opacity-100">
                         <span class="material-symbols-outlined">auto_awesome</span>
                         <span class="font-medium">Opportunities</span>

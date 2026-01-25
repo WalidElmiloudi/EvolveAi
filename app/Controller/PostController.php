@@ -26,6 +26,7 @@ class PostController extends Controller
         $userId = $_SESSION['user_id'] ?? null;
 
         $posts = $this->postModel->getAllWithLikes($userId);
+        $userPosts = $this->postModel->postsByUser($userId);
 
         require_once '../app/View/community.view.php';
     }
@@ -88,5 +89,15 @@ class PostController extends Controller
         echo json_encode(['success' => true,
                           'likeCount' => $like_count
                          ]);
+    }
+
+    public function delete():void
+    {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $postId = $_POST['post_id'];
+            $this->postModel->delete($postId);
+            header("Location: /EvolveAi/post/index/");
+            exit;
+        }
     }
 }

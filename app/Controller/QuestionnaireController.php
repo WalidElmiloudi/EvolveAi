@@ -11,6 +11,10 @@ class QuestionnaireController
 {
     public function showQuest()
     {
+        if (!isset($_SESSION['user_email'])) {
+            $this->view('auth/signUp.view');
+        }
+
         require_once '../app/View/auth/questionnaire.view.php';
     }
 

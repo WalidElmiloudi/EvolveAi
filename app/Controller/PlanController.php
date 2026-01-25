@@ -43,7 +43,10 @@ class planController extends Controller
         }
         public function showPlan()
         {
-
-                $this->View('dailyplan.view');
+            if (!isset($_SESSION['user_id'])) {
+                $this->view('auth/login.view');
+            } else {
+                $this->view('dailyplan.view');
+            }
         }
 }

@@ -114,7 +114,7 @@ class AuthController
 
         $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
         $host   = $_SERVER['HTTP_HOST'] ?? 'localhost';
-        $base   = $scheme . '://' . $host . '/EvolveAI';
+        $base   = $scheme . '://' . $host . '/EvolveAi';
 
         $link = $base . '/auth/checkOauth/' . $token;
 
@@ -138,11 +138,12 @@ class AuthController
                 'type' => 'failed'
                 ];
             require_once '../app/view/auth/login.view.php';
+
         }
 
         $userId = $record['id'];
 
-        require_once '../app/view/auth/updatePassword.php';
+        require_once '../app/View/auth/updatePassword.php';
     }
 
     public function resetPassword(int $userId):void

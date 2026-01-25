@@ -102,7 +102,7 @@ $tasks = $planController->getTasks();
                     <span><?= date('F d, Y') ?></span>
                 </div>
             </div>
-
+<!-- tasks -->
 
             <div class="space-y-4     tasks">
                 <?php foreach($tasks as $task): ?>
@@ -138,6 +138,7 @@ $tasks = $planController->getTasks();
                 </div>
                 <?php endforeach; ?>
             </div>
+<!-- ressources -->
             <div class="pt-4">
                 <div class="flex items-center justify-between mb-4">
                     <h2 class="text-xl font-bold tracking-tight">Plan Resources</h2>

@@ -19,8 +19,8 @@ class PostController extends Controller
     */
     public function index(): void
     {
-        if (!isset($_SESSION)) {
-            session_start();
+        if (!isset($_SESSION['user_id'])) {
+            $this->view('auth/login.view');
         }
 
         $userId = $_SESSION['user_id'] ?? null;
@@ -97,7 +97,7 @@ class PostController extends Controller
             $postId = $_POST['post_id'];
             $this->postModel->delete($postId);
             header("Location: /EvolveAi/post/index/");
-            exit;
+            
         }
     }
 }

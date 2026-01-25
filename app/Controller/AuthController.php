@@ -12,6 +12,7 @@ class AuthController
     public function __construct()
     {
         $this->userModel = new User();
+
     }
 
     public function showLogin()
@@ -44,7 +45,13 @@ class AuthController
         }
 
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
-        $this->userModel->create($username, $email, $passwordHash);
+        $user = $this->userModel->create($username, $email, $passwordHash);
+
+        if($user){
+            $_SESSION['user_id'] = $user;
+            $_SESSION['username'] = $username;
+            $_SESSION['user_email'] = $email;
+        }
 
         $_SESSION['user_email'] = $email;
         $_SESSION['userId'] = $this->userModel->getIdByEmail($email);

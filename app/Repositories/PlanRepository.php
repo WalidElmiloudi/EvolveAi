@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Core\Database;
+use PDO;
 
 
 class PlanRepository {
@@ -39,10 +40,10 @@ class PlanRepository {
 
             $stmt->execute([
                 'pid' => $plan_id,
-                'title' => $task->title,
-                'desc' => $task->description,
-                'dur' => $task->duration,
-                'prio' => $task->priority,
+                'title' => $task['title'],
+                'desc' => $task['description'],
+                'dur' => $task['duration'],
+                'prio' => $task['priority'],
                 'is_val' => 0
             ]);
         }
@@ -52,13 +53,13 @@ class PlanRepository {
         $sql = "SELECT * FROM daily_plan WHERE user_id = :uid AND DATE(plan_date) = :date";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['uid' => $userId, 'date' => $date]);
-        return $stmt->fetch();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getTasksByPlanId($planId) {
         $sql = "SELECT * FROM task WHERE plan_id = :pid";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['pid' => $planId]);
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

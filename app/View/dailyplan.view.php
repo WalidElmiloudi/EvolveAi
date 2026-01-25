@@ -4,11 +4,12 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 use App\Services\AiService;
+use App\Controller\planController;
 
-$tasksClass = new AiService;
+$planController = new planController;
 
-$jsonResponse = $tasksClass->fetchGeminiResponse();
-$tasks = json_decode($jsonResponse , true);
+$tasks = $planController->getTasks();
+
 
 ?>
 <!DOCTYPE html>

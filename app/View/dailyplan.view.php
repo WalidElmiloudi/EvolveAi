@@ -98,7 +98,7 @@ $tasks = json_decode($jsonResponse , true);
                 <div
                     class="flex items-center gap-2 text-sm font-bold bg-white dark:bg-zinc-900 px-4 py-2 rounded-lg border border-black/5 dark:border-white/5">
                     <span class="material-symbols-outlined text-primary">calendar_today</span>
-                    <span>October 24, 2023</span>
+                    <span><?= date('F d, Y') ?></span>
                 </div>
             </div>
 

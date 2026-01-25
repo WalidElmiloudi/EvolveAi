@@ -27,9 +27,7 @@ class PostController extends Controller
 
         $posts = $this->postModel->getAllWithLikes($userId);
 
-        $this->View('community/index', [
-            'posts' => $posts
-            ]);
+        require_once '../app/View/community.view.php';
     }
 
     /**
@@ -42,7 +40,7 @@ class PostController extends Controller
         }
 
         if (!isset($_SESSION['user_id'])) {
-            header('Location: /post/index');
+            header('Location: /EvolveAi/home/show/');
             exit;
         }
 
@@ -54,7 +52,7 @@ class PostController extends Controller
             }
         }
 
-        header('Location: /post/index');
+        header('Location: /EvolveAi/post/index');
         exit;
     }
 
@@ -85,8 +83,10 @@ class PostController extends Controller
                 }
             }
         }
-
-        header('Location: /post/index');
-        exit;
+        $like_count = $this->postModel->likeCountByPost($postId);
+        header('Content-Type: application/json');
+        echo json_encode(['success' => true,
+                          'likeCount' => $like_count
+                         ]);
     }
 }

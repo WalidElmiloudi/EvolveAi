@@ -50,7 +50,7 @@ class PlanRepository {
     }
 
     public function findPlanByDate($userId, $date) {
-        $sql = "SELECT * FROM daily_plan WHERE user_id = :uid AND plan_date = :date";
+        $sql = "SELECT * FROM daily_plan WHERE user_id = :uid AND DATE(plan_date) = :date";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['uid' => $userId, 'date' => $date]);
         return $stmt->fetch(PDO::FETCH_ASSOC);

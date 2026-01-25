@@ -54,6 +54,8 @@ class AuthController
         }
 
         $_SESSION['user_email'] = $email;
+        $_SESSION['userId'] = $this->userModel->getIdByEmail($email);
+        $_SESSION['username'] = $username;
         header('Location: /EvolveAi/questionnaire/showQuest');
         exit;
     }

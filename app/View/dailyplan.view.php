@@ -84,11 +84,7 @@ $tasks = $planController->getTasks();
 
                 <div class="flex items-center gap-3 pl-4 border-l border-black/5 dark:border-white/5">
                     <div class="text-right">
-                        <p class="text-sm font-bold">Alex Johnson</p>
-
-                    </div>
-                    <div class="size-10 rounded-full bg-cover bg-center ring-2 ring-primary/20"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJKYPQgL0KUPVgqtGwcKhHeShFlgo2htXUgbuHzLBU5vKYAHbLhFddIdVR85ez3V9Etm19Lk4TNHcW_mEN1FVA1WYNm6qKIVxDRKYIE7W-fYlyKlWvfaeo4SSFQnpB-Qvdfcn0nLXy_knL0t9xsa9WT_3jX5DWphm3rigth938xC9Kip0CHoWDwTVnrqvO_BE6KNTThfsYCOa-h9eULijhbzW5pRxUFXoGku5vQEf_IN-y4o9XafGvV4WDXSGax9uukRkBNez8yw')">
+                        <p class="text-sm font-bold"><?= htmlspecialchars($_SESSION['username']) ?></p>
                     </div>
                 </div>
             </div>
@@ -103,7 +99,7 @@ $tasks = $planController->getTasks();
                 <div
                     class="flex items-center gap-2 text-sm font-bold bg-white dark:bg-zinc-900 px-4 py-2 rounded-lg border border-black/5 dark:border-white/5">
                     <span class="material-symbols-outlined text-primary">calendar_today</span>
-                    <span>October 24, 2023</span>
+                    <span><?= date('F d, Y') ?></span>
                 </div>
             </div>
 

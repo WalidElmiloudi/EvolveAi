@@ -13,12 +13,12 @@ class HomeController extends Controller
     {
         if (session_status() === PHP_SESSION_NONE) session_start();
 
-        if (!isset($_SESSION['user']['id'])) {
-            $this->view('home'); 
+        if (!isset($_SESSION['user_id'])) {
+            $this->view('home.view'); 
             return;
         }
 
-        $userId = $_SESSION['user']['id'];
+        $userId = $_SESSION['user_id'];
         $repo = new PlanRepository();
         $today = date('Y-m-d');
 

@@ -16,10 +16,7 @@ class Post
 
     public function create(int $userId, string $content): bool
     {
-        $stmt = $this->db->prepare(
-            "INSERT INTO post (user_id, content) VALUES (:user_id, :content)"
-        );
-
+        $stmt = $this->db->prepare("INSERT INTO post (user_id, content) VALUES (:user_id, :content)");
         return $stmt->execute([
             'user_id' => $userId,
             'content' => $content
@@ -90,7 +87,7 @@ class Post
     }
 
    public function isLikedByUser(int $userId, int $postId): bool
-{
+   {
     $stmt = $this->db->prepare(
         "SELECT 1 FROM \"like\" WHERE user_id = :user_id AND post_id = :post_id LIMIT 1"
     );
@@ -103,6 +100,17 @@ class Post
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return !empty($result);
-}
+   }
+
+   public function likeCountByPost(int $postId): int
+   {
+       $stmt = $this->db->query("SELECT p.id , COUNT(l.post_id) AS like_count 
+                                 FROM post p
+                                 LEFT JOIN \"like\" l ON l.post_id = p.id
+                                 WHERE p.id = $postId
+                                 GROUP BY p.id;");
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['like_count'];
+   }
 
 }

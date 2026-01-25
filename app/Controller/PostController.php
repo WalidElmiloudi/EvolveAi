@@ -90,4 +90,14 @@ class PostController extends Controller
                           'likeCount' => $like_count
                          ]);
     }
+
+    public function delete():void
+    {
+        if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $postId = $_POST['post_id'];
+            $this->postModel->delete($postId);
+            header("Location: /EvolveAi/post/index/");
+            exit;
+        }
+    }
 }

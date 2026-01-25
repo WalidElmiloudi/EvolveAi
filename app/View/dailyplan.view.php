@@ -1,3 +1,17 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+use App\Services\AiService;
+use App\Controller\planController;
+
+$planController = new planController;
+
+$tasks = $planController->getTasks();
+
+
+?>
 <!DOCTYPE html>
 <html class="light" lang="en">
 
@@ -70,11 +84,7 @@
 
                 <div class="flex items-center gap-3 pl-4 border-l border-black/5 dark:border-white/5">
                     <div class="text-right">
-                        <p class="text-sm font-bold">Alex Johnson</p>
-
-                    </div>
-                    <div class="size-10 rounded-full bg-cover bg-center ring-2 ring-primary/20"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJKYPQgL0KUPVgqtGwcKhHeShFlgo2htXUgbuHzLBU5vKYAHbLhFddIdVR85ez3V9Etm19Lk4TNHcW_mEN1FVA1WYNm6qKIVxDRKYIE7W-fYlyKlWvfaeo4SSFQnpB-Qvdfcn0nLXy_knL0t9xsa9WT_3jX5DWphm3rigth938xC9Kip0CHoWDwTVnrqvO_BE6KNTThfsYCOa-h9eULijhbzW5pRxUFXoGku5vQEf_IN-y4o9XafGvV4WDXSGax9uukRkBNez8yw')">
+                        <p class="text-sm font-bold"><?= htmlspecialchars($_SESSION['username']) ?></p>
                     </div>
                 </div>
             </div>
@@ -89,15 +99,44 @@
                 <div
                     class="flex items-center gap-2 text-sm font-bold bg-white dark:bg-zinc-900 px-4 py-2 rounded-lg border border-black/5 dark:border-white/5">
                     <span class="material-symbols-outlined text-primary">calendar_today</span>
-                    <span>October 24, 2023</span>
+                    <span><?= date('F d, Y') ?></span>
                 </div>
             </div>
 <!-- tasks -->
 
-            <div class="space-y-4">
-            <?php  require "/partials/plan.php
-            "?> 
+            <div class="space-y-4     tasks">
+                <?php foreach($tasks as $task): ?>
+                <div
+                    class="bg-white dark:bg-zinc-900 p-6 rounded-2xl border-l-4 border-l-primary border-y border-r border-black/5 dark:border-white/5 flex items-center justify-between group hover:border-primary/40 transition-all shadow-md cursor-default">
+                    <div class="flex items-start gap-6 w-full">
+                        <div class="flex items-center h-6">
+                            <input
+                                class="size-6 rounded border-slate-300 text-primary focus:ring-primary cursor-pointer"
+                                type="checkbox" />
+                        </div>
+                        <div class="space-y-1 w-full">
+                            <div class="flex items-center gap-3">
+                                <h4 class="text-lg font-bold"><?= $task['title']; ?></h4>
+                            </div>
 
+                            <div class="flex items-center gap-4 text-sm opacity-60">
+                                <span class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">schedule</span> 30 mins
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">trending_up</span> <?= $task['priority']; ?>
+                                </span>
+                            </div>
+
+                            <p
+                                class="text-sm text-slate-500 dark:text-slate-400 max-h-0 opacity-0 overflow-hidden group-hover:max-h-24 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                                <br>
+                                <?= $task['description']; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
             </div>
 <!-- ressources -->
             <div class="pt-4">

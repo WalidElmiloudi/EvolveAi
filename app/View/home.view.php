@@ -64,7 +64,7 @@
                     <div class="size-8 bg-primary rounded-lg flex items-center justify-center">
                         <span class="material-symbols-outlined text-black font-bold">bolt</span>
                     </div>
-                    <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">evolveAi</span>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">EvolveAi</span>
                 </div>
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
                 </div>

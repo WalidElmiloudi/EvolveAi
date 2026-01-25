@@ -4,13 +4,13 @@ namespace App\Controller;
 
 use App\Core\Controller;
 
-class OppurtinitesController extends Controller
+class OpportunitiesController extends Controller
 {
 public function showOpportunities()
 
 {
 
-$this->view('oppurtinites.view');
+$this->view('opportunities.view');
 
 }   
 

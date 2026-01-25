@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Core\Database;
+use PDO;
 
 class User
 {
@@ -32,13 +33,15 @@ class User
         $stmt = $this->db->prepare("
             INSERT INTO \"user\" (username, email, password) 
             VALUES (:username, :email, :password)
-        ");
+            RETURNING id");
 
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
 
-        return $stmt->execute();
+        $stmt->execute();
+
+        return $stmt->fetchColumn();
     }
 
     public function exists($email)
@@ -79,11 +82,21 @@ class User
         return $stmt->execute([$passwordHash,$userId]) ? true : false;
     }
     
-    public function getIdByEmail(string $email): int
+    public function getIdByEmail(string $email): ?int
     {
-        $stmt = $this->db->prepare("SELECT * FROM \"user\" WHERE email = :email");
-        $stmt->execute([':email' => $email]);
-        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-        return $result['id'];
+        $stmt = $this->db->prepare(
+            'SELECT id FROM "user" WHERE email = :email LIMIT 1'
+        );
+        $stmt->execute(['email' => $email]);
+
+        $id = $stmt->fetchColumn();
+
+        return $id !== false ? (int) $id : null;
+    }
+
+    public function logout(): void
+    {
+        session_destroy();
+        session_unset();
     }
 }

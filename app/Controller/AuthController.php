@@ -12,6 +12,7 @@ class AuthController
     public function __construct()
     {
         $this->userModel = new User();
+
     }
 
     public function showLogin()
@@ -44,9 +45,17 @@ class AuthController
         }
 
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
-        $this->userModel->create($username, $email, $passwordHash);
+        $user = $this->userModel->create($username, $email, $passwordHash);
+
+        if($user){
+            $_SESSION['user_id'] = $user;
+            $_SESSION['username'] = $username;
+            $_SESSION['user_email'] = $email;
+        }
 
         $_SESSION['user_email'] = $email;
+        $_SESSION['userId'] = $this->userModel->getIdByEmail($email);
+        $_SESSION['username'] = $username;
         header('Location: /EvolveAi/questionnaire/showQuest');
         exit;
     }
@@ -67,6 +76,7 @@ class AuthController
         if ($user) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['user_email'] = $email;
             header('Location: /EvolveAi/plan/showplan');
             exit;
         } else {
@@ -123,10 +133,6 @@ class AuthController
         $record = $this->userModel->findValidResetToken($token);
 
         if (!$record) {
-
-            $_SESSION['toast'] = ['message' => 'Password Reset Link Invalid Or Expired !'];
-            require_once '../app/View/auth/login.view.php';
-
             $_SESSION['toast'] = [
                 'message' => 'Password Reset Link Invalid Or Expired !',
                 'type' => 'failed'
@@ -165,12 +171,12 @@ class AuthController
     public function showForgetPassword():void
     {
         require_once '../app/View/auth/forgetPassword.view.php';
-
     }
 
-    public function logout(){
-
- require_once '../app/View/auth/login.view.php';
-}
+    public function logout(): void
+    {
+        $this->userModel->logout();
+        require_once '../app/View/home.view.php';
+    }
 
 }

@@ -9,19 +9,16 @@ use App\Repositories\PlanRepository;
 
 class HomeController extends Controller
 {
-
-    
-
     public function show()
     {
         if (session_status() === PHP_SESSION_NONE) session_start();
 
-        if (!isset($_SESSION['user']['id'])) {
-            $this->view('home'); 
+        if (!isset($_SESSION['user_id'])) {
+            $this->view('home.view'); 
             return;
         }
 
-        $userId = $_SESSION['user']['id'];
+        $userId = $_SESSION['user_id'];
         $repo = new PlanRepository();
         $today = date('Y-m-d');
 
@@ -54,7 +51,5 @@ class HomeController extends Controller
         }
 
         $this->view('dailyplan', ['tasks' => $tasks]); 
-
-}
-
+    }
 }

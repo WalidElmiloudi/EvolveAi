@@ -2,24 +2,28 @@
 
 namespace App\Services;
 
+use App\Services\PromptService;
+
 class AiService {
 
     private $apiKey;
     private $endpoint;
+    private $prompt;
 
     public function __construct()
     {
-        $this->apiKey = getenv("API_KEY");
+        $this->apiKey = 'API_KEY';
         $this->endpoint = "https://router.huggingface.co/v1/chat/completions";
+        $this->prompt = new PromptService;
     }
     
-    public function fetchGeminiResponse($prompt) 
+    public function fetchGeminiResponse()
     {
         $data = [
             'model' => 'meta-llama/Llama-3.1-8B-Instruct',
             'messages' => [
                 ['role' => 'system', 'content' => 'You are a helpful AI Career Coach. You must output ONLY valid JSON. Do not add markdown or explanations.'],
-                ['role' => 'user', 'content' => $prompt]
+                ['role' => 'user', 'content' => $this->prompt->buildJsonPrompt($_SESSION['user_email'])]
             ],
             'temperature' => 0.7,
             'max_tokens' => 1000

@@ -79,11 +79,7 @@
 
                 <div class="flex items-center gap-3 pl-4 border-l border-black/5 dark:border-white/5">
                     <div class="text-right">
-                        <p class="text-sm font-bold">Alex Johnson</p>
-
-                    </div>
-                    <div class="size-10 rounded-full bg-cover bg-center ring-2 ring-primary/20"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJKYPQgL0KUPVgqtGwcKhHeShFlgo2htXUgbuHzLBU5vKYAHbLhFddIdVR85ez3V9Etm19Lk4TNHcW_mEN1FVA1WYNm6qKIVxDRKYIE7W-fYlyKlWvfaeo4SSFQnpB-Qvdfcn0nLXy_knL0t9xsa9WT_3jX5DWphm3rigth938xC9Kip0CHoWDwTVnrqvO_BE6KNTThfsYCOa-h9eULijhbzW5pRxUFXoGku5vQEf_IN-y4o9XafGvV4WDXSGax9uukRkBNez8yw')">
+                        <p class="text-sm font-bold"><?= htmlspecialchars($_SESSION['username']) ?></p>
                     </div>
                 </div>
             </div>
@@ -98,9 +94,10 @@
                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgfevj_Jdf128X156qf2YArdzp28BUmoAhXPRdhb58nd0ycRcK7edmIoK-dqOcrKJXmXxA1r2-nemRWAeLvp-lFaSkqrQNSX8AeMDCWvhL1R6OuZAtXxMRa3fxOn6ppMBYeQlC2oRn_kvCCvZh0wNKZ_jJj_akVcC2bTF3gWqWedTP9Ihb8rThHZ7n0TGRf3qV9k_x7zvvG9HsbVYITSZCsBga9CwXoZhr_PS4JQdMkk3akvOveDMsXQMH_4hHga1aDCYgqShrRg')">
                             </div>
                             <div class="flex-1">
+                                <form action="/EvolveAi/post/create/" method="post">
                                 <textarea
                                     class="w-full bg-background-light dark:bg-white/5 border-none rounded-xl p-4 text-sm focus:ring-1 focus:ring-primary/30 resize-none min-h-[100px]"
-                                    placeholder="What's on your mind?"></textarea>
+                                    name="content" placeholder="What's on your mind?"></textarea>
                                 <div class="flex items-center justify-start mt-4">
                                     <div class="flex items-center gap-4">   
 
@@ -110,100 +107,48 @@
                                         Post Update
                                     </button>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                     <div class="space-y-6">
-
+                        <?php
+                        if(!empty($posts)):
+                           foreach($posts as $post):
+                              $isLiked = $this->postModel->isLikedByUser($userId,$post['id']);
+                        ?>
                         <div
                             class="bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
                             <div class="p-6">
                                 <div class="flex items-center justify-between mb-4">
                                     <div class="flex items-center gap-3">
-                                        <div class="size-10 rounded-full bg-cover bg-center"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXKf2zsz-1oiz7MwTkT0I_GYLCYfZccwCneUDGJCYWnr3AYS454qEuitnXKG9HAj9eQ0AWtfuFobDtFaDvf8NFOK95rIkM_1jH9TX0OjHDtbLuAxlg90NKgXE88n-iZExT6yyzzQW3Eo4CsVXshbneIjcIHgsqnZNIxnBgB540G2pMpe2rFDdjiQ4xdj1lDuNKA4T0szf0Dmwot7fYHFdHoPZNUEJVbeRn2FmSBj50P8d2jtjy9tQsZRfy0nSsESlFkFeznBusDw')">
-                                        </div>
                                         <div>
-                                            <p class="font-bold text-sm">Marcus Thorne</p>
+                                            <p class="font-bold text-sm"><?= $post['username'] ?></p>
                                         </div>
                                     </div>
                                     <button class="opacity-40 hover:opacity-100"><span
                                             class="material-symbols-outlined">more_horiz</span></button>
                                 </div>
                                 <p class="text-sm leading-relaxed mb-4">
-                                    Does anyone have recommendations for stable diffusion prompts specifically for UI/UX
-                                    wireframing? Trying to speed up my ideation phase.
+                                    <?= $post['content'] ?>
                                 </p>
                                 <div class="flex items-center gap-6 pt-4 border-t border-black/5 dark:border-white/5">
-                                    <button
+                                    <form class="like-btn-form">
+                                        <input type="hidden" name="user_id" value="<?= $userId ?>">
+                                        <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
+                                      <button type = "submit"
                                         class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 group">
-                                        <span class="material-symbols-outlined text-lg">thumb_up</span> 12 Likes
-                                    </button>
-                                
-                            
+                                        <span class="material-symbols-outlined text-lg cursor-pointer text-gray-400 transition like-btn"
+                                               style="font-variation-settings: 'FILL' <?= $isLiked ? '1' : '0'  ?>;" data-liked="<?= $isLiked ? 'true' : 'false'  ?>">thumb_up</span><span class="like-count"><?= $post['like_count'] ?></span>
+                                      </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <div
-                            class="bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
-                            <div class="p-6">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="flex items-center gap-3">
-                                        <div class="size-10 rounded-full bg-cover bg-center"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXKf2zsz-1oiz7MwTkT0I_GYLCYfZccwCneUDGJCYWnr3AYS454qEuitnXKG9HAj9eQ0AWtfuFobDtFaDvf8NFOK95rIkM_1jH9TX0OjHDtbLuAxlg90NKgXE88n-iZExT6yyzzQW3Eo4CsVXshbneIjcIHgsqnZNIxnBgB540G2pMpe2rFDdjiQ4xdj1lDuNKA4T0szf0Dmwot7fYHFdHoPZNUEJVbeRn2FmSBj50P8d2jtjy9tQsZRfy0nSsESlFkFeznBusDw')">
-                                        </div>
-                                        <div>
-                                            <p class="font-bold text-sm">Marcus Thorne</p>
-                                
-                                        </div>
-                                    </div>
-                                    <button class="opacity-40 hover:opacity-100"><span
-                                            class="material-symbols-outlined">more_horiz</span></button>
-                                </div>
-                                <p class="text-sm leading-relaxed mb-4">
-                                    Does anyone have recommendations for stable diffusion prompts specifically for UI/UX
-                                    wireframing? Trying to speed up my ideation phase.
-                                </p>
-                                <div class="flex items-center gap-6 pt-4 border-t border-black/5 dark:border-white/5">
-                                    <button
-                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 group">
-                                        <span class="material-symbols-outlined text-lg">thumb_up</span> 12 Likes
-                                    </button>
-                                   
-                                
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white dark:bg-zinc-900 rounded-2xl border border-black/5 dark:border-white/5 shadow-sm">
-                            <div class="p-6">
-                                <div class="flex items-center justify-between mb-4">
-                                    <div class="flex items-center gap-3">
-                                        <div class="size-10 rounded-full bg-cover bg-center"
-                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXKf2zsz-1oiz7MwTkT0I_GYLCYfZccwCneUDGJCYWnr3AYS454qEuitnXKG9HAj9eQ0AWtfuFobDtFaDvf8NFOK95rIkM_1jH9TX0OjHDtbLuAxlg90NKgXE88n-iZExT6yyzzQW3Eo4CsVXshbneIjcIHgsqnZNIxnBgB540G2pMpe2rFDdjiQ4xdj1lDuNKA4T0szf0Dmwot7fYHFdHoPZNUEJVbeRn2FmSBj50P8d2jtjy9tQsZRfy0nSsESlFkFeznBusDw')">
-                                        </div>
-                                        <div>
-                                            <p class="font-bold text-sm">Marcus Thorne</p>
-                                            
-                                        </div>
-                                    </div>
-                                    <button class="opacity-40 hover:opacity-100"><span
-                                            class="material-symbols-outlined">more_horiz</span></button>
-                                </div>
-                                <p class="text-sm leading-relaxed mb-4">
-                                    Does anyone have recommendations for stable diffusion prompts specifically for UI/UX
-                                    wireframing? Trying to speed up my ideation phase.
-                                </p>
-                                <div class="flex items-center gap-6 pt-4 border-t border-black/5 dark:border-white/5">
-                                    <button
-                                        class="flex items-center gap-2 text-xs font-bold opacity-60 hover:opacity-100 group">
-                                        <span class="material-symbols-outlined text-lg">thumb_up</span> 12 Likes
-                                    </button>
-                                 
-                                
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                           endforeach;
+                        endif;
+                        ?>
                     </div>
                 </div>
             
@@ -211,7 +156,7 @@
         </main>
     </div>
 
-
+ <script src="/EvolveAi/public/assets/script.js"></script>
 </body>
 
 </html>

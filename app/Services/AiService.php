@@ -46,8 +46,6 @@ class AiService {
         if ($response === false) {
             throw new \Exception('Curl error: ' . curl_error($ch));
         }
-        
-        curl_close($ch);
 
         $responseData = json_decode($response, true);
 

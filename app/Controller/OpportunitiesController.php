@@ -6,12 +6,10 @@ use App\Core\Controller;
 
 class OpportunitiesController extends Controller
 {
-public function showOpportunities()
+    public function showOpportunities()
+    {
+        $this->view('opportunities.view');
 
-{
-
-$this->view('opportunities.view');
-
-}   
+    }   
 
 }

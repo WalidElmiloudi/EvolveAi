@@ -113,4 +113,10 @@ class Post
         return $result['like_count'];
    }
 
+   public function postsByUser(int $userId): array
+   {
+       $stmt = $this->db->query("SELECT * FROM post WHERE user_id = $userId");
+       return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+   }
+
 }

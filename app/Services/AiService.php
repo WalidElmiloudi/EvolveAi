@@ -12,7 +12,7 @@ class AiService {
 
     public function __construct()
     {
-        $this->apiKey = 'API_KEY';
+        $this->apiKey = $_ENV['API_KEY'];
         $this->endpoint = "https://router.huggingface.co/v1/chat/completions";
         $this->prompt = new PromptService;
     }
@@ -46,8 +46,6 @@ class AiService {
         if ($response === false) {
             throw new \Exception('Curl error: ' . curl_error($ch));
         }
-        
-        curl_close($ch);
 
         $responseData = json_decode($response, true);
 
